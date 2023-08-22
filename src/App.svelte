@@ -43,8 +43,8 @@
     /* width: 100%;
     height: 100%; */
     opacity: 0.4; /* 투명도  */
-    width: 100%;
-    height: 700px;
+    width: 100%; /* 모바일 웹 및 데스크탑 웹을 위해 가로 사이즈 풀 */
+    height: 700px; /* 모바일 웹 화면을 위해 높이 700px 로 고정 */
     background-position: -50px -30px; /* 원하는 부분의 위치 */
     object-fit: cover; /* 이미지를 비율 유지하며 가득 채움 */
     transition: background-color 0.3s ease;

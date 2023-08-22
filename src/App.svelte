@@ -28,6 +28,7 @@
   };
 
   let text = "Hello, Svelte!";
+
   
 </script>
 
@@ -46,6 +47,7 @@
     height: 700px;
     background-position: -50px -30px; /* 원하는 부분의 위치 */
     object-fit: cover; /* 이미지를 비율 유지하며 가득 채움 */
+    transition: background-color 0.3s ease;
   }
 
   .overlay-appbar-left {

@@ -10,7 +10,7 @@
           <ul class="menu menu-horizontal">
             <!-- Navbar menu content here -->
             <li><a>홈</a></li>
-            <li><a>로그인</a></li>
+            <li><a>로그인 </a></li>
           </ul>
         </div>
         <div class="flex-none lg:hidden">

@@ -3,7 +3,6 @@
   <div class="drawer-content flex flex-col">
     <!-- Navbar -->
     <nav class="sticky top-0">
-    
       <div class="w-full navbar bg-base-300">
         <div class="flex-1 px-2 mx-2 table-pin-rows">꾸민</div>
         <div class="flex-none hidden lg:block">

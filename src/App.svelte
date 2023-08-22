@@ -105,7 +105,8 @@
     {#each images as src, imageIndex (src)}
       <div class="container">
         {#if loaded.includes(imageIndex)}
-          <img src={src.url} alt={src.description} width=100% height={10} class=img-container  />
+          <img src={src.url} alt={src.description} class=img-container  />
+          <div>{text}</div>
         {/if}
       </div>
     {/each}

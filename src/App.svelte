@@ -2,24 +2,29 @@
   import Carousel from "svelte-carousel";
   const images = [
     {
-      url: "https://p4.wallpaperbetter.com/wallpaper/403/494/469/interior-interior-design-indoors-wallpaper-preview.jpg",
+      url: "https://selinerapp.tk/images/wallpaper_1.jpg",
       description: "image1",
+      text: "언제 어디서든<br/>꾸민하세요!"
     },
     {
-      url: "https://p4.wallpaperbetter.com/wallpaper/860/803/694/interior-design-style-design-home-wallpaper-preview.jpg",
+      url: "https://selinerapp.tk/images/wallpaper_2.jpg",
       description: "image2",
+      text: "새롭게 인테리어를<br/>꾸미고 싶을 때<br/>꾸민!"
     },
     {
-      url: "https://p4.wallpaperbetter.com/wallpaper/304/52/890/room-design-style-interior-wallpaper-preview.jpg",
+      url: "https://selinerapp.tk/images/wallpaper_3.jpg",
       description: "image3",
+      text: "새로운 분위기의<br/>전환이 필요할 때<br/>꾸민!"
     },
     {
-      url: "https://p4.wallpaperbetter.com/wallpaper/472/430/507/living-style-furniture-design-wallpaper-preview.jpg",
+      url: "https://selinerapp.tk/images/wallpaper_4.jpg",
       description: "image4",
+      text: "내 마음대로 꾸미고<br/>싶을 때<br/>꾸민!"
     },
     {
-      url: "https://p4.wallpaperbetter.com/wallpaper/290/818/435/interior-room-style-design-wallpaper-preview.jpg",
+      url: "https://selinerapp.tk/images/wallpaper_5.jpg",
       description: "image5",
+      text: "순식간에 디자인하고 싶을 때<br/>꾸민!"
     },
   ];
   let carousel; // for calling methods of the carousel instance
@@ -77,6 +82,20 @@
     background-position: -50px -30px; /* 원하는 부분의 위치 */
     object-fit: cover; /* 이미지를 비율 유지하며 가득 채움 */
     transition: background-color 0.3s ease;
+  }
+
+  .overlay-appbar-center {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    /* right: 50%; */
+    transform: translate(-50%, -50%);
+    letter-spacing: 20;
+    line-height: 1.4;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .overlay-appbar-left {
@@ -142,9 +161,11 @@
 	#img-container {
 		position: sticky;
 		top: 0;
-		width: 100%;
-		height: 100vh;
-		background-image: url("https://images.unsplash.com/19/waves.JPG?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80");
+    width: 100%; /* 모바일 웹 및 데스크탑 웹을 위해 가로 사이즈 풀 */
+    height: 750px; /* 모바일 웹 화면을 위해 높이 700px 로 고정 */
+		/* width: 100%;
+		height: 100vh; */
+		background-image: url("https://selinerapp.tk/images/wallpaperbetter.com_2560x1440.jpg");
 		background-position: 50% 50%;
 		background-size: cover;
 		background-repeat: no-repeat;		
@@ -199,9 +220,9 @@
           <img 
             src={src.url} 
             alt={src.description} 
-            class=img-container  
+            class=img-container
           />
-          <div>{text}</div>
+          <div class="text-4xl overlay-appbar-center">{@html src.text}</div>
         {/if}
       </div>
     {/each}
@@ -274,6 +295,26 @@
   </div>
 </div>
 
+
+<svelte:window bind:scrollY={y} bind:innerHeight={innerHeight}/>
+
+<!-- <div id="y-scroll">innerHeight(내부 높이) :  {innerHeight} - y {y}</div> -->
+<!-- <div id="y-scroll">innerHeight(내부 높이) :  {innerHeight} - y {y}</div> -->
+
+<div id="">
+	<div id="">
+		<!-- <div id="img-container"
+			style:transform="scale({calculate(y, 0, 1*innerHeight, 1, 1.5)})"
+			style:opacity="{calculate(y, 0.7 * innerHeight, 1.8 * innerHeight, 1, 0)}"
+			>
+		</div> -->
+    <div id="img-container"
+			style:opacity="{calculate(y + 700, 0.7 * innerHeight, 1.8 * innerHeight, 0, 1)}"
+			>
+		</div>
+	</div>
+</div>
+
 <!-- 시차 효과 -->
 <Parallax 
   sections=3
@@ -283,7 +324,7 @@
 		<ParallaxLayer 
       offset=1 
       rate=1 
-      style="background-color: #FFE5CC;" 
+      style="background-color: #87deb9;" 
     />
 		<ParallaxLayer 
       offset=2 
@@ -492,33 +533,4 @@
       >
 		</ParallaxLayer>
 	</Parallax>
-
-
-  <svelte:window bind:scrollY={y} bind:innerHeight={innerHeight}/>
-
-<div id="y-scroll">innerHeight(내부 높이) :  {innerHeight} - y {y}</div>
-
-<div id="content">
-	<div id="home">
-		<div id="img-container"
-			style:transform="scale({calculate(y, 0, 1*innerHeight, 1, 1.5)})"
-			style:opacity="{calculate(y, 0.7*innerHeight, 1.8*innerHeight, 0, 1)}"
-			>
-		</div>
-	</div>
-	<br/><br/><br/><br/><br/><br/><br/><br/>
-	<div>
-			<h1 
-			style:opacity="{
-				calculate(
-					y - 1400, 
-					0.7 * innerHeight - 500 , 0.8 * innerHeight, 
-					0, 1
-				)
-			}"
-		>
-			고객의 만족을 최우선으로 생각합니다.
-		</h1>
-	</div>
-</div>
 

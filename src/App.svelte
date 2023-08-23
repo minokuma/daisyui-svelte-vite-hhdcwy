@@ -28,7 +28,8 @@
   };
 
   let text = "Hello, Svelte!";
-  // 시차 효과 스크립트
+
+  // 시차 효과 스크립트 시작
   import { Parallax, ParallaxLayer} from 'svelte-parallax'
 	
   
@@ -36,6 +37,28 @@
 	let disabled = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 	
 	const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
+  // 시차 효과 스크립트 종료
+
+  // 줌 페이드 효과 스크립트 시작
+  let y = 0
+	let innerHeight
+
+	function calculate(y, startY, endY, startValue, endValue) {
+		const diffY = endY - startY
+		const diffValue = endValue - startValue
+
+		if (y < startY) {
+			return startValue
+		} else if(startY <= y && y <= endY) {
+			const progress = (y - startY)/diffY
+			return startValue + (diffValue * progress)
+		} else if(endY < y){
+			return endValue
+		}
+	}
+
+	import { fade } from 'svelte/transition';
+  // 줌 페이드 효과 스크립트 종료
 </script>
 
 <style>
@@ -211,7 +234,6 @@
   </div>
 </div>
 
-
 <!-- 시차 효과 -->
 <Parallax 
   sections=3
@@ -221,7 +243,7 @@
 		<ParallaxLayer 
       offset=1 
       rate=1 
-      style="background-color: #805E73;" 
+      style="background-color: #FFE5CC;" 
     />
 		<ParallaxLayer 
       offset=2 
@@ -296,9 +318,20 @@
         style="display: block; width: 20%; margin-left: 75%;"
       >
 		</ParallaxLayer>
+
+    <ParallaxLayer 
+      offset=1.6
+      rate=0.4
+      style="opacity: 1.0;"
+    >
+    <center>또 다른 세계</center>
+    <center>나의 비슷한 조건의 사용자들의</center>
+    <center>리얼한 후기들을 확인하고</center>
+    <center>내게 딱 맞는 파트너와 함께 해요!</center>
+		</ParallaxLayer>
 		 
 		<ParallaxLayer 
-      offset=1.6 
+      offset=1.3
       rate=-0.1 
       style="opacity: 0.4;"
     >
@@ -375,7 +408,6 @@
 		    tabindex=0
 			>
 		</ParallaxLayer>
-		
 		<ParallaxLayer 
 		  offset=1
 			rate=0.1

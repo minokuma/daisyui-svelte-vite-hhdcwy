@@ -143,7 +143,7 @@
       </div>
     {/each}
   </Carousel>
-  
+
     <div class="overlay-appbar-right">
       <div class="flex-none lg:hidden">
         <label for="my-drawer-3" class="btn btn-square btn-ghost">
@@ -183,9 +183,23 @@
             </ul>
           </div>
           <div class="flex-none lg:hidden">
-            <label for="my-drawer-3" class="btn btn-square btn-ghost">
+            <label 
+              for="my-drawer-3" 
+              class="btn btn-square btn-ghost"
+            >
               <!-- svg 속성 -->
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                class="inline-block w-6 h-6 stroke-current">
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
             </label>
           </div>
         </div>
@@ -200,7 +214,7 @@
 
 <!-- 시차 효과 -->
 <Parallax 
-  sections=3 
+  sections=3
   style="background-color: #253237;" {disabled} 
   bind:this={parallax}
 >
@@ -283,19 +297,55 @@
       >
 		</ParallaxLayer>
 		 
-		<ParallaxLayer offset=1.6 rate=-0.1 style="opacity: 0.4;">
-			<img src={url('cloud')} alt='' style="display: block; width: 20%; margin-left: 60%;">
-			<img src={url('cloud')} alt='' style="display: block; width: 25%; margin-left: 30%;">
-			<img src={url('cloud')} alt='' style="display: block; width: 10%; margin-left: 80%;">
+		<ParallaxLayer 
+      offset=1.6 
+      rate=-0.1 
+      style="opacity: 0.4;"
+    >
+			<img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 20%; margin-left: 60%;"
+      >
+			<img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 25%; margin-left: 30%;"
+      >
+			<img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 10%; margin-left: 80%;"
+      >
 		</ParallaxLayer>
 		
-		<ParallaxLayer offset=2.6 rate=0.4 style="opacity: 0.6;">
-			<img src={url('cloud')} alt='' style="display: block; width: 20%; margin-left: 5%;">
-			<img src={url('cloud')} alt='' style="display: block; width: 15%; margin-left: 75%;">
+		<ParallaxLayer 
+      offset=2.6 
+      rate=0.4 
+      style="opacity: 0.6;"
+    >
+			<img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 20%; margin-left: 5%;"
+      >
+			<img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 15%; margin-left: 75%;"
+      >
 		</ParallaxLayer>
 		
-		<ParallaxLayer offset=2.5 rate=-0.4 style="display: flex; align-items: center; justify-content: center;">
-			<img src={url('earth')} alt='' style="width: 60%;">
+		<ParallaxLayer 
+      offset=2.5 
+      rate=-0.4 
+      style="display: flex; align-items: center; justify-content: center;"
+    >
+			<img 
+        src={url('earth')} 
+        alt='' 
+        style="width: 60%;"
+      >
 		</ParallaxLayer>
 
 		<ParallaxLayer 
@@ -303,9 +353,13 @@
 			rate=-0.3
 			style="display: flex; align-items: center; justify-content: center;"
 		>
-			<img src={url('clients')} alt='' style="height: 80%; width: 80%;">
+			<img 
+        src={url('clients')} 
+        alt='' 
+        style="height: 80%; width: 80%;"
+      >
 	</ParallaxLayer>
-		
+
 		<ParallaxLayer 
 		  offset=0 
 			rate=0.1
@@ -348,9 +402,21 @@
 				alt='' 
 				class="clients-main" 
 				style="width: 40%;" 
-				on:click={() => parallax.scrollTo(1, {selector: '.server'})}
-			  on:keyup={(e) => e.key === 'Enter' && parallax.scrollTo(1, {selector: '.server'})}
+				on:click={
+          () => parallax.scrollTo(
+            1, {
+              selector: '.server'
+            }
+          )
+        }
+			  on:keyup={
+          (e) => e.key === 'Enter' && parallax.scrollTo(
+            1, {
+              selector: '.server'
+            }
+          )
+        }
 			  tabindex=0
-			>
+      >
 		</ParallaxLayer>
 	</Parallax>

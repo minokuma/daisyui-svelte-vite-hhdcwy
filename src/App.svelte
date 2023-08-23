@@ -221,23 +221,66 @@
       style="background-image: { url('stars', true) }; background-size: cover;"
     />
 	
-		<ParallaxLayer offset=1.3  rate=-0.3>
-			<img src={url('satellite4')} alt='' style="width: 15%; margin-left: 70%;">
+		<ParallaxLayer 
+      offset=1.3  
+      rate=-0.3
+    >
+			<img 
+        src={url('satellite4')} 
+        alt='' 
+        style="width: 15%; margin-left: 70%;"
+      >
 		</ParallaxLayer>
 		
-		<ParallaxLayer offset=1 rate=0.8 style="opacity: 0.1;">
-			<img src={url('cloud')} alt='' style="display: block; width: 20%; margin-left: 55%;">
-			<img src={url('cloud')} alt='' style="display: block; width: 10%; margin-left: 15%;">
+		<ParallaxLayer 
+      offset=1 
+      rate=0.8 
+      style="opacity: 0.1;"
+    >
+			<img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 20%; margin-left: 55%;"
+      >
+			<img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 10%; margin-left: 15%;"
+      >
 		</ParallaxLayer>
 		  
-		<ParallaxLayer offset=1.75 rate=0.5 style="opacity: 0.1;">
-			<img src={url('cloud')} alt='' style="display: block; width: 20%; margin-left: 70%;">
-			<img src={url('cloud')} alt='' style="display: block; width: 20%; margin-left: 40%;">
+		<ParallaxLayer 
+      offset=1.75 
+      rate=0.5 
+      style="opacity: 0.1;"
+    >
+			<img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 20%; margin-left: 70%;"
+      >
+			<img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 20%; margin-left: 40%;"
+      >
 		</ParallaxLayer>
 		
-		<ParallaxLayer offset=1 rate=0.2 style="opacity: 0.2;">
-			<img src={url('cloud')} alt='' style="display: block; width: 10%; margin-left: 10%;">
-			<img src={url('cloud')} alt='' style="display: block; width: 20%; margin-left: 75%;">
+		<ParallaxLayer 
+      offset=1 
+      rate=0.2 
+      style="opacity: 0.2;"
+    >
+			<img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 10%; margin-left: 10%;"
+      >
+			<img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 20%; margin-left: 75%;"
+      >
 		</ParallaxLayer>
 		 
 		<ParallaxLayer offset=1.6 rate=-0.1 style="opacity: 0.4;">

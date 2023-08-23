@@ -121,6 +121,46 @@
 	.clients-main:focus-visible {
 		outline: 2px dotted blue;
 	}
+
+  /* 줌 페이드 효과 시작 */
+  #y-scroll {
+		position: fixed;
+		top: 1rem;
+		left: 1rem;
+		color: white;
+		z-index: 10;
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+	#content {
+		height: 500vh;
+	}
+	#home {
+		height: 260vh;
+		border-bottom: 5px solid #90aaa3;
+	}
+	#img-container {
+		position: sticky;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		background-image: url("https://images.unsplash.com/19/waves.JPG?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80");
+		background-position: 50% 50%;
+		background-size: cover;
+		background-repeat: no-repeat;		
+	}
+	h1 {
+		color: white;
+		text-align: center;
+	}
+	:global(body) {
+		margin: 0;
+		background-color: black;
+	}
+	:global(*){
+		box-sizing: border-box;
+	}
+  /* 줌 페이드 효과 종료 */
 </style>
 
 <div class="drawer drawer-end">
@@ -452,3 +492,33 @@
       >
 		</ParallaxLayer>
 	</Parallax>
+
+
+  <svelte:window bind:scrollY={y} bind:innerHeight={innerHeight}/>
+
+<div id="y-scroll">innerHeight(내부 높이) :  {innerHeight} - y {y}</div>
+
+<div id="content">
+	<div id="home">
+		<div id="img-container"
+			style:transform="scale({calculate(y, 0, 1*innerHeight, 1, 1.5)})"
+			style:opacity="{calculate(y, 0.7*innerHeight, 1.8*innerHeight, 0, 1)}"
+			>
+		</div>
+	</div>
+	<br/><br/><br/><br/><br/><br/><br/><br/>
+	<div>
+			<h1 
+			style:opacity="{
+				calculate(
+					y - 1400, 
+					0.7 * innerHeight - 500 , 0.8 * innerHeight, 
+					0, 1
+				)
+			}"
+		>
+			고객의 만족을 최우선으로 생각합니다.
+		</h1>
+	</div>
+</div>
+

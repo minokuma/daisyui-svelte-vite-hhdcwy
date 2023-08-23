@@ -1,4 +1,17 @@
 <script>
+
+ let isMobile = false;
+
+  // 브라우저 창 크기에 따라 화면 크기를 판별하는 함수
+  function checkWindowSize() {
+    isMobile = window.innerWidth <= 640; // 기준 값 설정
+  }
+
+  // 초기화 시 화면 크기를 판별하고, 창 크기가 변경될 때마다 업데이트
+  checkWindowSize();
+  window.addEventListener('resize', checkWindowSize);
+
+
   import Carousel from "svelte-carousel";
   const images = [
     {
@@ -19,12 +32,12 @@
     {
       url: "https://selinerapp.tk/images/wallpaper_4.jpg",
       description: "image4",
-      text: "내 마음대로 꾸미고<br/>싶을 때<br/>꾸민!"
+      text: "내 마음대로<br/>꾸미고 싶을 때<br/>꾸민!"
     },
     {
       url: "https://selinerapp.tk/images/wallpaper_5.jpg",
       description: "image5",
-      text: "순식간에 디자인하고 싶을 때<br/>꾸민!"
+      text: "순식간에<br/>디자인하고 싶을 때<br/>꾸민!"
     },
   ];
   let carousel; // for calling methods of the carousel instance
@@ -67,6 +80,7 @@
 </script>
 
 <style>
+
   .container {
     position: relative;
     /* width: 300px;
@@ -86,16 +100,15 @@
 
   .overlay-appbar-center {
     position: absolute;
-    top: 50%;
-    left: 20%;
+    top: 30%;
+    /* left: 20%; */
     /* right: 50%; */
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     letter-spacing: 20;
     line-height: 1.4;
-    font-size: 50px;
     font-weight: bold;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
   }
 
   .overlay-appbar-left {
@@ -222,12 +235,13 @@
             alt={src.description} 
             class=img-container
           />
-          <div class="text-4xl overlay-appbar-center">{@html src.text}</div>
+          <div class="{isMobile ? 'inset-0 flex justify-center text-3xl' : 'mx-20 text-5xl' } overlay-appbar-center">
+            {@html src.text}
+          </div>
         {/if}
       </div>
     {/each}
   </Carousel>
-
     <div class="overlay-appbar-right">
       <div class="flex-none lg:hidden">
         <label for="my-drawer-3" class="btn btn-square btn-ghost">
@@ -405,10 +419,8 @@
       rate=0.4
       style="opacity: 1.0;"
     >
-    <center>또 다른 세계</center>
-    <center>나의 비슷한 조건의 사용자들의</center>
-    <center>리얼한 후기들을 확인하고</center>
-    <center>내게 딱 맞는 파트너와 함께 해요!</center>
+    <center text-black>또 다른 세계<br/>나의 비슷한 조건의 사용자들의<br/>리얼한 후기들을 확인하고<br/>내게 딱 맞는 파트너와 함께 해요!</center>
+
 		</ParallaxLayer>
 		 
 		<ParallaxLayer 

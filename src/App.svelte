@@ -113,7 +113,7 @@
 
   .overlay-appbar-left {
     position: absolute;
-    top: 5%;
+    top: 60px;
     left: 10%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -196,18 +196,11 @@
 	}
   /* 줌 페이드 효과 종료 */
 </style>
-
-<div class="drawer drawer-end">
-  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
-  
-  <div class="drawer-content flex flex-col">
-    <!-- Navbar start -->
-    <nav class="sticky top-0">
-      
-    </nav>
-    <div class="overlay-appbar-left">
+<!-- Navbar start -->
+<nav class="sticky top-0">
+  <div class="overlay-appbar-left">
       <div class="w-full navbar ">
-        <div class="flex-1 px-2 mx-2 table-pin-rows">꾸민</div>
+        <div class="flex-1 px-2 mx-2 table-pin-rows">꾸민 1</div>
         <div class="flex-none hidden lg:block">
           <ul class="menu menu-horizontal">
             <!-- Navbar menu content here -->
@@ -217,6 +210,10 @@
         </div>
       </div>
     </div>
+</nav>
+<div class="drawer drawer-end">
+  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
+  <div class="drawer-content flex flex-col">
     <!-- Navbar end -->
     <Carousel
       bind:this={carousel}
@@ -242,7 +239,7 @@
       </div>
     {/each}
   </Carousel>
-    <div class="overlay-appbar-right">
+  <div class="overlay-appbar-right">
       <div class="flex-none lg:hidden">
         <label for="my-drawer-3" class="btn btn-square btn-ghost">
           <svg 

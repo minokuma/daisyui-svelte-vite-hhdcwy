@@ -77,11 +77,7 @@
 	import { fade } from 'svelte/transition';
   // 줌 페이드 효과 스크립트 종료
 
-  let scroll;
-	let speed = 4
 </script>
-
-<svelte:window bind:scrollY={scroll} />
 
 <style>
 
@@ -321,5 +317,4 @@
   </div>
   
 </div>
-
 

@@ -77,26 +77,17 @@
 	import { fade } from 'svelte/transition';
   // 줌 페이드 효과 스크립트 종료
 
+  import Navbar from './Navbar.svelte'
+	import Sidebar from './Sidebar.svelte'
+	import Main from './Main.svelte'
+
+	let open = false
 </script>
 
 <style>
-
-	h1 {
-		position: fixed;
-		z-index: 10;
-	}
-	.box {
-		--size: 300px;
-		height: var(--size);
-		width: var(--size);
-		background: lightGrey;
-		margin-bottom: 1rem;
-	}
-
   .navbar {
     position: fixed;
     background-color: transparent;
-    z-index: 1;
     pointer-events: auto; /* 클릭 가능하도록 설정 */
   }
 
@@ -217,17 +208,23 @@
   
 </style>
 
+
+
+<Sidebar bind:open/>
+<Navbar bind:sidebar={open}/>
+
+<svelte:window bind:scrollY={y} bind:innerHeight={innerHeight}/>
+
 <div class="h-screen w-full flex flex-col">
-  <div class="drawer drawer-end">
+  <div class="">
 
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
     <div class="drawer-content flex flex-col">
       <!-- Navbar -->
-      <div class="w-full navbar bg-base-300 sticky top-0">
+      <!-- <div class="w-full navbar bg-base-300 sticky top-0">
         <div class="flex-1 px-2 mx-2">꾸민</div>
         <div class="flex-none hidden lg:block">
           <ul class="menu menu-horizontal">
-            <!-- Navbar menu content here -->
             <li><a>홈</a></li>
             <li><a>로그인</a></li>
           </ul>
@@ -237,7 +234,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </label>
         </div> 
-      </div>
+      </div> -->
 
       <Carousel
         bind:this={carousel}
@@ -267,6 +264,7 @@
       </Carousel>
       <!-- Page content here -->
       
+      
       <br/>
       <br/>
       <br/>
@@ -286,35 +284,238 @@
       <br/>
       <br/>
     </div> 
-  
-    <!-- 드로어 사이드 -->
-    <div class="drawer-side">
-      <label for="my-drawer-3" class="drawer-overlay"></label> 
-      <ul class="menu px-3 w-full h-full bg-base-200">
-        <!-- Sidebar content here -->
-        <!-- Navbar -->
-      <div class="w-full navbar">
-        <div class="flex-1">꾸민</div>
-        <div class="flex-none hidden lg:block">
-          <ul class="menu menu-horizontal">
-            <!-- Navbar menu content here -->
-            <li><a>홈</a></li>
-            <li><a>로그인</a></li>
-          </ul>
-        </div>
-        <div class="flex-none lg:hidden  px-4">
-          <label for="my-drawer-3" class="btn btn-square btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-          </label>
-        </div> 
-      </div>
-        <br/><br/><br/>
-        <li><a>홈</a></li>
-        <li><a>로그인</a></li>
-      </ul>
-      
+  </div>
+</div>
+
+<div id="">
+  <div id="">
+    <!-- <div id="img-container"
+      style:transform="scale({calculate(y, 0, 1*innerHeight, 1, 1.5)})"
+      style:opacity="{calculate(y, 0.7 * innerHeight, 1.8 * innerHeight, 1, 0)}"
+      >
+    </div> -->
+    <div id="img-container"
+      style:opacity="{calculate(y + 700, 0.7 * innerHeight, 1.8 * innerHeight, 0, 1)}"
+      >
     </div>
   </div>
-  
 </div>
+
+
+<!-- 시차 효과 -->
+<Parallax 
+  sections=3
+  style="background-color: #253237;" {disabled} 
+  bind:this={parallax}
+>
+    <ParallaxLayer 
+      offset=1 
+      rate=1 
+      style="background-color: #87deb9;" 
+    />
+    <ParallaxLayer 
+      offset=2 
+      rate=1 
+      style="background-color: #87BCDE;" 
+    />
+    <ParallaxLayer 
+      offset=0 
+      rate=0 
+      span=3 
+      style="background-image: { url('stars', true) }; background-size: cover;"
+    />
+  
+    <ParallaxLayer 
+      offset=1.3  
+      rate=-0.3
+    >
+      <img 
+        src={url('satellite4')} 
+        alt='' 
+        style="width: 15%; margin-left: 70%;"
+      >
+    </ParallaxLayer>
+    
+    <ParallaxLayer 
+      offset=1 
+      rate=0.8 
+      style="opacity: 0.1;"
+    >
+      <img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 20%; margin-left: 55%;"
+      >
+      <img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 10%; margin-left: 15%;"
+      >
+    </ParallaxLayer>
+      
+    <ParallaxLayer 
+      offset=1.75 
+      rate=0.5 
+      style="opacity: 0.1;"
+    >
+      <img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 20%; margin-left: 70%;"
+      >
+      <img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 20%; margin-left: 40%;"
+      >
+    </ParallaxLayer>
+    
+    <ParallaxLayer 
+      offset=1 
+      rate=0.2 
+      style="opacity: 0.2;"
+    >
+      <img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 10%; margin-left: 10%;"
+      >
+      <img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 20%; margin-left: 75%;"
+      >
+    </ParallaxLayer>
+
+    <ParallaxLayer 
+      offset=1.6
+      rate=0.4
+      style="opacity: 1.0;"
+    >
+    <center text-black>또 다른 세계<br/>나의 비슷한 조건의 사용자들의<br/>리얼한 후기들을 확인하고<br/>내게 딱 맞는 파트너와 함께 해요!</center>
+
+    </ParallaxLayer>
+     
+    <ParallaxLayer 
+      offset=1.3
+      rate=-0.1 
+      style="opacity: 0.4;"
+    >
+      <img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 20%; margin-left: 60%;"
+      >
+      <img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 25%; margin-left: 30%;"
+      >
+      <img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 10%; margin-left: 80%;"
+      >
+    </ParallaxLayer>
+    
+    <ParallaxLayer 
+      offset=2.6 
+      rate=0.4 
+      style="opacity: 0.6;"
+    >
+      <img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 20%; margin-left: 5%;"
+      >
+      <img 
+        src={url('cloud')} 
+        alt='' 
+        style="display: block; width: 15%; margin-left: 75%;"
+      >
+    </ParallaxLayer>
+    
+    <ParallaxLayer 
+      offset=2.5 
+      rate=-0.4 
+      style="display: flex; align-items: center; justify-content: center;"
+    >
+      <img 
+        src={url('earth')} 
+        alt='' 
+        style="width: 60%;"
+      >
+    </ParallaxLayer>
+
+    <ParallaxLayer 
+      offset=2
+      rate=-0.3
+      style="display: flex; align-items: center; justify-content: center;"
+    >
+      <img 
+        src={url('clients')} 
+        alt='' 
+        style="height: 80%; width: 80%;"
+      >
+  </ParallaxLayer>
+
+    <ParallaxLayer 
+      offset=0 
+      rate=0.1
+      style="display: flex; align-items: center; justify-content: center;"
+    >
+      <img 
+        src={url('server')} 
+        alt='' 
+        class="server" 
+        style="width: 20%;" 
+        on:click={() => parallax.scrollTo(2, {selector: '.bash'})}
+        on:keyup={(e) => e.key === 'Enter' && parallax.scrollTo(2, {selector: '.bash'})}
+        tabindex=0
+      >
+    </ParallaxLayer>
+    <ParallaxLayer 
+      offset=1
+      rate=0.1
+      style="display: flex; align-items: center; justify-content: center;"
+    >
+      <img 
+        src={url('bash')} 
+        alt=''
+        class="bash"
+        style="width: 40%;"  
+        on:click={() => parallax.scrollTo(3, {selector: '.clients-main'})}
+        on:keyup={(e) => e.key === 'Enter' && parallax.scrollTo(3, {selector: '.clients-main'})} 
+        tabindex=0
+      >
+    </ParallaxLayer>
+    
+    <ParallaxLayer 
+      offset=2
+      rate=-0
+      style="display: flex; align-items: center; justify-content: center;"
+    >
+      <img 
+        src={url('clients-main')} 
+        alt='' 
+        class="clients-main" 
+        style="width: 40%;" 
+        on:click={
+          () => parallax.scrollTo(
+            1, {
+              selector: '.server'
+            }
+          )
+        }
+        on:keyup={
+          (e) => e.key === 'Enter' && parallax.scrollTo(
+            1, {
+              selector: '.server'
+            }
+          )
+        }
+        tabindex=0
+      >
+    </ParallaxLayer>
+  </Parallax>
 

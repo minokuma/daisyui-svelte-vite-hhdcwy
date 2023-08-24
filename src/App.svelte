@@ -50,7 +50,6 @@
   // 시차 효과 스크립트 시작
   import { Parallax, ParallaxLayer} from 'svelte-parallax'
 	
-  
 	let parallax;
 	let disabled = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 	
@@ -80,7 +79,6 @@
 </script>
 
 <style>
-
   .container {
     position: relative;
     /* width: 300px;
@@ -196,7 +194,7 @@
 	}
   /* 줌 페이드 효과 종료 */
 </style>
-<!-- Navbar start -->
+<!-- Navbar 시작 -->
 <nav class="sticky top-0">
   <div class="overlay-appbar-left">
       <div class="w-full navbar ">
@@ -205,12 +203,15 @@
           <ul class="menu menu-horizontal">
             <!-- Navbar menu content here -->
             <li><a>홈</a></li>
-            <li><a>로그인</a></li>
+            <li><a>로그인ㅇㅇ</a></li>
           </ul>
         </div>
       </div>
     </div>
 </nav>
+<!-- Navbar 종료 -->
+
+<!-- 드로어 동작 시작 -->
 <div class="drawer drawer-end">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
   <div class="drawer-content flex flex-col">
@@ -223,6 +224,8 @@
       autoplayProgressVisible={false}
       arrows={false}
       swiping={true}
+      dots={false}
+      particlesToShow={1}
     >
     {#each images as src, imageIndex (src)}
       <div class="container">
@@ -239,30 +242,28 @@
       </div>
     {/each}
   </Carousel>
-  <div class="overlay-appbar-right">
-      <div class="flex-none lg:hidden">
-        <label for="my-drawer-3" class="btn btn-square btn-ghost">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            class="inline-block w-6 h-6 stroke-current"
-          >
-            <path 
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" 
-              d="M4 6h16M4 12h16M4 18h16"
-            >
-            </path>
-          </svg>
-        </label>
-      </div>
-    </div>
-    <!-- Page content here -->
-    
-  </div> 
-  
+</div>
+<!-- 드로어 동작 종료 -->
+<div class="sticky top-0 overlay-appbar-right">
+  <div class="flex-none lg:hidden">
+    <label for="my-drawer-3" class="btn btn-square btn-ghost">
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        class="inline-block w-6 h-6 stroke-current"
+      >
+        <path 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          stroke-width="2" 
+          d="M4 6h16M4 12h16M4 18h16"
+        >
+        </path>
+      </svg>
+    </label>
+  </div>
+</div>
   <div class="drawer-side">
     <label for="my-drawer-3" class="drawer-overlay"></label> 
     <ul class="menu w-full h-full bg-gray-100 text-gray-500">

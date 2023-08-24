@@ -19,9 +19,7 @@
 
 
 <header class="drawer-content flex flex-col">
-	<nav class="flex">
-    
-    
+	<nav class="flex ">
     {#if isMobile}
       <!-- 모바일 환경에서 보여지는 내용 -->
       <Logo/>

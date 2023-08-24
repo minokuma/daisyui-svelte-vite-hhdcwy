@@ -80,6 +80,13 @@
 </script>
 
 <style>
+  .navbar {
+    /* position: relative; */
+    background-color: transparent;
+    z-index: 1;
+    pointer-events: auto; /* 클릭 가능하도록 설정 */
+  }
+
   .container {
     position: relative;
     /* width: 300px;
@@ -99,7 +106,7 @@
 
   .overlay-appbar-center {
     position: absolute;
-    top: 45%;
+    top: 35%;
     /* left: 20%; */
     /* right: 50%; */
     /* transform: translate(-50%, -50%); */
@@ -197,69 +204,82 @@
 </style>
 
 <div class="h-screen w-full flex flex-col">
-  <div class="w-full navbar bg-base-300 gap-2">
-    <div class="flex-none lg:hidden">
-			<!--  🔵	conditional class `swap-active` 👇	 -->
-      <label for="my-drawer-3" class:swap-active={isDrawerOpen} class="btn btn-circle swap swap-rotate">
-        <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
-        <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
-      </label>
-    </div> 
-    <span>꾸민</span>
-  </div> 
+  <div class="drawer drawer-end">
 
-  <div class="drawer drawer-end drawer-mobile w-full h-full ">
-		<!--  🔵	bind the `checked` attribute of checkbox 👇	 -->
-    <input id="my-drawer-3" type="checkbox" bind:checked={isDrawerOpen} class="drawer-toggle"> 
-    <div class="flex flex-col items-center justify-center drawer-content ">
-      <Carousel
-      bind:this={carousel}
-      let:loaded
-      autoplay
-      autoplayDuration={3000}
-      autoplayProgressVisible={false}
-      arrows={false}
-      swiping={true}
-      dots={false}
-      particlesToShow={1}
-    >
-    {#each images as src, imageIndex (src)}
-      <div class="container">
-      
-        {#if loaded.includes(imageIndex)}
-          <img 
-            src={src.url} 
-            alt={src.description} 
-            class=img-container
-          />
-          <div class="{isMobile ? 'inset-0 flex justify-center text-3xl' : 'mx-20 text-5xl' } overlay-appbar-center">
-            {@html src.text}
-          </div>
-        {/if}
+  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
+    <div class="drawer-content flex flex-col">
+      <!-- Navbar -->
+      <div class="w-full navbar bg-base-300 sticky top-0">
+        <div class="flex-1 px-2 mx-2">꾸민</div>
+        <div class="flex-none hidden lg:block">
+          <ul class="menu menu-horizontal">
+            <!-- Navbar menu content here -->
+            <li><a>홈</a></li>
+            <li><a>로그인</a></li>
+          </ul>
+        </div>
+        <div class="flex-none lg:hidden ">
+          <label for="my-drawer-3" class="btn btn-square btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </label>
+        </div> 
       </div>
-    {/each}
-  </Carousel>
-  <br/>
-			<br/>
-			<br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-			
+
+      <Carousel
+        bind:this={carousel}
+        let:loaded
+        autoplay
+        autoplayDuration={3000}
+        autoplayProgressVisible={false}
+        arrows={false}
+        swiping={true}
+        dots={false}
+        particlesToShow={1}
+      >
+        {#each images as src, imageIndex (src)}
+          <div class="container">
+            {#if loaded.includes(imageIndex)}
+              <img 
+                src={src.url} 
+                alt={src.description} 
+                class=img-container
+              />
+              <div class="{isMobile ? 'inset-0 flex justify-center text-3xl' : 'mx-20 text-5xl' } overlay-appbar-center">
+                {@html src.text}
+              </div>
+            {/if}
+          </div>
+        {/each}
+      </Carousel>
+      <!-- Page content here -->
     </div> 
+  
+    <!-- 드로어 사이드 -->
     <div class="drawer-side">
       <label for="my-drawer-3" class="drawer-overlay"></label> 
-      <ul class="p-4 overflow-y-auto menu w-80 bg-base-200">
+      <ul class="menu px-3 w-full h-full bg-base-200">
         <!-- Sidebar content here -->
-        <li><span>홈</span></li>
-        <li><span>로그인</span></li>
+        <!-- Navbar -->
+      <div class="w-full navbar">
+        <div class="flex-1 ">꾸민</div>
+        <div class="flex-none hidden lg:block">
+          <ul class="menu menu-horizontal">
+            <!-- Navbar menu content here -->
+            <li><a>홈</a></li>
+            <li><a>로그인</a></li>
+          </ul>
+        </div>
+        <div class="flex-none lg:hidden ">
+          <label for="my-drawer-3" class="btn btn-square btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </label>
+        </div> 
+      </div>
+        <br/>
+        <li><a>홈</a></li>
+        <li><a>로그인</a></li>
       </ul>
+      
     </div>
   </div>
 </div>

@@ -76,12 +76,29 @@
 
 	import { fade } from 'svelte/transition';
   // 줌 페이드 효과 스크립트 종료
-  let isDrawerOpen = false;
+
+  let scroll;
+	let speed = 4
 </script>
 
+<svelte:window bind:scrollY={scroll} />
+
 <style>
+
+	h1 {
+		position: fixed;
+		z-index: 10;
+	}
+	.box {
+		--size: 300px;
+		height: var(--size);
+		width: var(--size);
+		background: lightGrey;
+		margin-bottom: 1rem;
+	}
+
   .navbar {
-    /* position: relative; */
+    position: fixed;
     background-color: transparent;
     z-index: 1;
     pointer-events: auto; /* 클릭 가능하도록 설정 */
@@ -201,6 +218,7 @@
 		box-sizing: border-box;
 	}
   /* 줌 페이드 효과 종료 */
+  
 </style>
 
 <div class="h-screen w-full flex flex-col">
@@ -252,6 +270,25 @@
         {/each}
       </Carousel>
       <!-- Page content here -->
+      
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </div> 
   
     <!-- 드로어 사이드 -->
@@ -261,7 +298,7 @@
         <!-- Sidebar content here -->
         <!-- Navbar -->
       <div class="w-full navbar">
-        <div class="flex-1 ">꾸민</div>
+        <div class="flex-1">꾸민</div>
         <div class="flex-none hidden lg:block">
           <ul class="menu menu-horizontal">
             <!-- Navbar menu content here -->
@@ -269,17 +306,20 @@
             <li><a>로그인</a></li>
           </ul>
         </div>
-        <div class="flex-none lg:hidden ">
+        <div class="flex-none lg:hidden  px-4">
           <label for="my-drawer-3" class="btn btn-square btn-ghost">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
           </label>
         </div> 
       </div>
-        <br/>
+        <br/><br/><br/>
         <li><a>홈</a></li>
         <li><a>로그인</a></li>
       </ul>
       
     </div>
   </div>
+  
 </div>
+
+

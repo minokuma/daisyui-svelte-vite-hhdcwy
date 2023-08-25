@@ -1,5 +1,5 @@
 <script>
-
+  
  let isMobile = false;
 
   // 브라우저 창 크기에 따라 화면 크기를 판별하는 함수
@@ -82,6 +82,8 @@
 	import Main from './Main.svelte'
 
 	let open = false
+  import { reveal } from 'svelte-reveal';
+  import Example1 from './reveal/Example1.svelte';
 </script>
 
 <style>
@@ -208,8 +210,6 @@
   
 </style>
 
-
-
 <Sidebar bind:open/>
 <Navbar bind:sidebar={open}/>
 
@@ -256,7 +256,7 @@
                 class=img-container
               />
               <div class="{isMobile ? 'inset-0 flex justify-center text-3xl' : 'mx-20 text-5xl' } overlay-appbar-center">
-                {@html src.text}
+              <p use:reveal={{ transition: "fade" }}>{@html src.text}</p>
               </div>
             {/if}
           </div>
@@ -264,25 +264,8 @@
       </Carousel>
       <!-- Page content here -->
       
+      <!-- <h1 use:reveal>Your title</h1> -->
       
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
     </div> 
   </div>
 </div>
@@ -300,7 +283,7 @@
     </div>
   </div>
 </div>
-
+<Example1 />
 
 <!-- 시차 효과 -->
 <Parallax 

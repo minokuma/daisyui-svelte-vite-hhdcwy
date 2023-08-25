@@ -277,13 +277,15 @@
       style:opacity="{calculate(y, 0.7 * innerHeight, 1.8 * innerHeight, 1, 0)}"
       >
     </div> -->
-    <div id="img-container"
+    <div 
+      id="img-container"
       style:opacity="{calculate(y + 700, 0.7 * innerHeight, 1.8 * innerHeight, 0, 1)}"
       >
     </div>
   </div>
 </div>
 <Example1 />
+
 
 <!-- 시차 효과 -->
 <Parallax 

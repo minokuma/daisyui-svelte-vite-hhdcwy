@@ -17,9 +17,11 @@
 <h3 use:reveal={{ transition: "blur", delay: 1400}}>이어서 이 글까지요2~</h3> -->
 
 <!-- <p use:reveal={{ delay: 1800 }}>그렇죠? 😎</p> -->
-<p use:reveal={{ x: -50, y: 50 }}>
-  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEWpzF%2FbtqGfMB0vZl%2FkqkwUwBXr2XyCQjNICA4x1%2Fimg.png" />
-</p>
+<div class="box">
+	<p use:reveal={{ x: -50, y: 50 }}>
+		<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEWpzF%2FbtqGfMB0vZl%2FkqkwUwBXr2XyCQjNICA4x1%2Fimg.png" width=50% />
+	</p>
+</div>
 
 
 <style>

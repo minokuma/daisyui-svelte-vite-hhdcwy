@@ -7,7 +7,7 @@
 
   // 모바일 환경 판단
   let isMobile = false;
-
+  
   function checkWindowSize() {
     isMobile = window.innerWidth <= 768; // 예시로 768px를 기준으로 모바일 환경 판단
   }

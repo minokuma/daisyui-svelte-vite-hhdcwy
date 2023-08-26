@@ -87,11 +87,6 @@
 </script>
 
 <style>
-  .navbar {
-    position: fixed;
-    background-color: transparent;
-    pointer-events: auto; /* 클릭 가능하도록 설정 */
-  }
 
   .container {
     position: relative;
@@ -211,6 +206,40 @@
 </style>
 
 <Sidebar bind:open/>
+<!--  여기다 -->
+<body class="bg-cyan-400">
+  <!-- 메뉴 아이템들과 플렉스 처리 -->
+  <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
+    <div>
+      <!-- 커서 포인터 영역 활성화 -->
+      <span class="text-2xl font-[Poppins] cursor-pointer">
+        <!-- 인라인 처리! -->
+        <img class="h-8 inline" src="https://www.ggumin.me/images/logo-b.png" alt="">
+        꾸민
+      </span>
+    </div>
+    <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7">
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-cyan-500 duration-500">HOME</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-cyan-500 duration-500">SERVICE</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-cyan-500 duration-500">ABOUT</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-cyan-500 duration-500">CONTACT</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-cyan-500 duration-500">LOGIN</a>
+      </li>
+
+      <button class="bg-cyan-400 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-cyan-500 rounded">시작하기
+      </button>
+    </ul>
+  </nav>
+</body>
 <Navbar bind:sidebar={open}/>
 
 <svelte:window bind:scrollY={y} bind:innerHeight={innerHeight}/>

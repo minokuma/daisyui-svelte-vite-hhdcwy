@@ -2,12 +2,13 @@
   import Icon from 'svelte-icons-pack/Icon.svelte';
   import AiOutlineMenu from "svelte-icons-pack/ai/AiOutlineMenu";
 
-  let isMenuOpen = false;
+  // let isMenuOpen = false;
 
-  function toggleMenu() {
-    console.log('토글 메뉴!!');
-    isMenuOpen = !isMenuOpen;
-  }
+  // function toggleMenu() {
+  //   alert();
+  //   console.log('토글 메뉴!!');
+  //   isMenuOpen = !isMenuOpen;
+  // }
 
 
   let isMobile = false;
@@ -97,6 +98,7 @@
 
   // 메뉴
   function Menu(e) {
+    // alert(e);
     let list = document.querySelector('ul');
 
     e.name === 'menu' 
@@ -111,6 +113,28 @@
         list.classList.remove('opacity-100')
       )  
   }
+
+  let menuState = "menu";
+
+  // function toggleMenu() {
+  //   let list = document.querySelector('ul');
+    
+  //   if (menuState === "menu") {
+  //     menuState = "close";
+  //     list.classList.add('top-[80px]');
+  //     list.classList.add('opacity-100');
+  //   } else {
+  //     menuState = "menu";
+  //     list.classList.remove('top-[80px]');
+  //     list.classList.remove('opacity-100');
+  //   }
+  // }
+  
+  function toggleMenu() {
+    alert();
+    menuState = menuState === "menu" ? "close" : "menu";
+  }
+  
 </script>
 
 <style>
@@ -245,7 +269,27 @@
       </span>
 
       <span class="text-3xl cursor-pointer mx-2 md:hidden block">
-      <Icon src={AiOutlineMenu} on:click={toggleMenu} />
+      
+        <button on:click={Menu}>
+          <Icon src={AiOutlineMenu} />
+        </button>
+        <button on:click={toggleMenu}>{menuState}</button>
+         <button on:click={(e) => handleClick(Menu, this)}>아이고</button>
+
+         <header class="drawer-content flex flex-col">
+
+          <nav class="flex">
+            {#if menuState === "menu"}
+              <!-- 메뉴가 닫혀있을 때 -->
+              <Icon src={AiOutlineMenu} on:click={toggleMenu} />
+            {:else}
+              <!-- 메뉴가 열려있을 때 -->
+              <Icon src={AiOutlineClose} on:click={toggleMenu} />
+            {/if}
+            <!-- 나머지 내용 -->
+          </nav>
+        </header>
+
         <!-- <Icon src={AiOutlineMenu} onclick="Menu(this)"  /> -->
         
       </span>

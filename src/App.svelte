@@ -1,7 +1,34 @@
 <script>
-  import Icon from 'svelte-icons-pack/Icon.svelte';
-  import AiOutlineMenu from "svelte-icons-pack/ai/AiOutlineMenu";
 
+
+  import {
+    Collapse,
+    Navbar,
+    Styles,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    Dropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    Button, 
+    Icon
+  } from 'sveltestrap';
+	
+  let theme = 'light';
+  let isOpen = false;
+
+  function handleUpdate(event) {
+    isOpen = event.detail.isOpen;
+  }
+  
+  import AiOutlineMenu from "svelte-icons-pack/ai/AiOutlineMenu";
+  import AiOutlineClose from "svelte-icons-pack/ai/AiOutlineClose";
+
+  
   // let isMenuOpen = false;
 
   // function toggleMenu() {
@@ -88,8 +115,8 @@
 	import { fade } from 'svelte/transition';
   // 줌 페이드 효과 스크립트 종료
 
-  import Navbar from './Navbar.svelte'
 	import Sidebar from './Sidebar.svelte'
+  
 	import Main from './Main.svelte'
 
 	let open = false
@@ -130,14 +157,15 @@
   //   }
   // }
   
-  function toggleMenu() {
-    alert();
+  function toggleMenu(e) {
     menuState = menuState === "menu" ? "close" : "menu";
   }
   
 </script>
 
+
 <style>
+  a { display: block; }
 
   .container {
     position: relative;
@@ -255,43 +283,94 @@
   /* 줌 페이드 효과 종료 */
 </style>
 
-<Sidebar bind:open/>
-<!--  여기다 -->
-<body class="bg-cyan-400">
-  <!-- 메뉴 아이템들과 플렉스 처리 -->
-  <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
-    <div class="flex justify-between items-center">
-      <!-- 커서 포인터 영역 활성화 -->
+
+<Styles {theme} />
+
+
+<Button
+  color="primary"
+  outline
+  active={theme === 'light'}
+  on:click={() => (theme = 'light')}
+>
+  light <Icon name="sun-fill" />
+</Button>
+<Button
+  color="primary"
+  outline
+  active={theme === 'dark'}
+  on:click={() => (theme = 'dark')}
+>
+  dark <Icon name="moon-stars-fill" />
+</Button>
+<Button
+  color="primary"
+  outline
+  active={theme === 'auto'}
+  on:click={() => (theme = 'auto')}
+>
+  auto <Icon name="circle-half" />
+</Button>
+
+<Navbar color="light" light expand="md">
+  <NavbarBrand href="/">
+    <!-- 커서 포인터 영역 활성화 -->
       <span class="text-2xl font-[Poppins] cursor-pointer">
         <!-- 인라인 처리! -->
+        <img class="h-8 inline" src="https://www.ggumin.me/images/logo-b.png" alt="">
+        꾸민
+      </span>
+  </NavbarBrand>
+  <NavbarToggler on:click={() => (isOpen = !isOpen)} />
+  <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
+    <Nav class="ms-auto" navbar>
+      <NavItem>
+        <NavLink href="#components/">컴포넌트들</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="https://github.com/bestguy/sveltestrap"> 깃허브 </NavLink>
+      </NavItem>
+      <Dropdown>
+        <DropdownToggle nav caret>옵션들</DropdownToggle>
+        <DropdownMenu end>
+          <DropdownItem>Option 1 with long text leaking out of the view</DropdownItem>
+          <DropdownItem>Option 2</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem>Reset</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+    </Nav>
+  </Collapse>
+</Navbar>
+
+<!--  여기다 -->
+<!-- <body class="bg-cyan-400">
+  <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
+    <div class="flex justify-between items-center">
+      <span class="text-2xl font-[Poppins] cursor-pointer">
         <img class="h-8 inline" src="https://www.ggumin.me/images/logo-b.png" alt="">
         꾸민
       </span>
 
       <span class="text-3xl cursor-pointer mx-2 md:hidden block">
       
-        <button on:click={Menu}>
-          <Icon src={AiOutlineMenu} />
-        </button>
         <button on:click={toggleMenu}>{menuState}</button>
-         <button on:click={(e) => handleClick(Menu, this)}>아이고</button>
 
-         <header class="drawer-content flex flex-col">
-
+        <header class="drawer-content flex flex-col">
           <nav class="flex">
             {#if menuState === "menu"}
-              <!-- 메뉴가 닫혀있을 때 -->
               <Icon src={AiOutlineMenu} on:click={toggleMenu} />
+              <div>
+                <a href="/">메뉴1</a>
+                <a href="/">메뉴2</a>
+                <a href="/">메뉴3</a>
+                <a href="/">메뉴4</a>
+            </div>
             {:else}
-              <!-- 메뉴가 열려있을 때 -->
               <Icon src={AiOutlineClose} on:click={toggleMenu} />
             {/if}
-            <!-- 나머지 내용 -->
           </nav>
         </header>
-
-        <!-- <Icon src={AiOutlineMenu} onclick="Menu(this)"  /> -->
-        
       </span>
     </div>
     <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7">
@@ -315,8 +394,9 @@
       </button>
     </ul>
   </nav>
-</body>
-<Navbar bind:sidebar={open}/>
+</body> -->
+
+<!-- <Navbar bind:sidebar={open}/> -->
 
 <svelte:window bind:scrollY={y} bind:innerHeight={innerHeight}/>
 

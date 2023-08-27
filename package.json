@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "svelte-carousel": "^1.0.25",
-    "svelte-icons-pack": "^2.1.0"
+    "svelte-icons-pack": "^2.1.0",
+    "sveltestrap": "^5.11.1"
   }
 }

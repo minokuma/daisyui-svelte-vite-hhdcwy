@@ -17,6 +17,7 @@
     "vite": "^4.2.1"
   },
   "dependencies": {
-    "svelte-carousel": "^1.0.25"
+    "svelte-carousel": "^1.0.25",
+    "svelte-icons-pack": "^2.1.0"
   }
 }

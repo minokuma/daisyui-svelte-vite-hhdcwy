@@ -1,6 +1,16 @@
 <script>
-  
- let isMobile = false;
+  import Icon from 'svelte-icons-pack/Icon.svelte';
+  import AiOutlineMenu from "svelte-icons-pack/ai/AiOutlineMenu";
+
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    console.log('토글 메뉴!!');
+    isMenuOpen = !isMenuOpen;
+  }
+
+
+  let isMobile = false;
 
   // 브라우저 창 크기에 따라 화면 크기를 판별하는 함수
   function checkWindowSize() {
@@ -84,6 +94,23 @@
 	let open = false
   import { reveal } from 'svelte-reveal';
   import Example1 from './reveal/Example1.svelte';
+
+  // 메뉴
+  function Menu(e) {
+    let list = document.querySelector('ul');
+
+    e.name === 'menu' 
+      ? ( 
+        e.name = "close", 
+        list.classList.add('top-[80px]'), 
+        list.classList.add('opacity-100')
+      )
+      : ( 
+        e.name = "menu", 
+        list.classList.remove('top-[80px'),
+        list.classList.remove('opacity-100')
+      )  
+  }
 </script>
 
 <style>
@@ -202,7 +229,6 @@
 		box-sizing: border-box;
 	}
   /* 줌 페이드 효과 종료 */
-  
 </style>
 
 <Sidebar bind:open/>
@@ -210,12 +236,18 @@
 <body class="bg-cyan-400">
   <!-- 메뉴 아이템들과 플렉스 처리 -->
   <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
-    <div>
+    <div class="flex justify-between items-center">
       <!-- 커서 포인터 영역 활성화 -->
       <span class="text-2xl font-[Poppins] cursor-pointer">
         <!-- 인라인 처리! -->
         <img class="h-8 inline" src="https://www.ggumin.me/images/logo-b.png" alt="">
         꾸민
+      </span>
+
+      <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+      <Icon src={AiOutlineMenu} on:click={toggleMenu} />
+        <!-- <Icon src={AiOutlineMenu} onclick="Menu(this)"  /> -->
+        
       </span>
     </div>
     <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7">

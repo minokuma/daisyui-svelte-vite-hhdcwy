@@ -312,36 +312,33 @@
   기본 <Icon name="circle-half" />
 </Button>
 
-<Navbar color="light" light expand="md">
-  <NavbarBrand href="/">
-    <!-- 커서 포인터 영역 활성화 -->
-      <span class="text-2xl font-[Poppins] cursor-pointer">
-        <!-- 인라인 처리! -->
-        <img class="h-8 inline" src="https://www.ggumin.me/images/logo-b.png" alt="">
-        꾸민
-      </span>
-  </NavbarBrand>
-  <NavbarToggler on:click={() => (isOpen = !isOpen)} />
-  <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
-    <Nav class="ms-auto" navbar>
-      <NavItem>
-        <NavLink class="text-right" href="#components/">컴포넌트들</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink class="text-right" href="https://github.com/bestguy/sveltestrap"> 깃허브 </NavLink>
-      </NavItem>
-      <Dropdown>
-        <DropdownToggle nav caret>옵션들</DropdownToggle>
-        <DropdownMenu end>
-          <DropdownItem>Option 1 with long text leaking out of the view</DropdownItem>
-          <DropdownItem>Option 2</DropdownItem>
-          <DropdownItem divider />
-          <DropdownItem>Reset</DropdownItem>
-        </DropdownMenu>
-      </Dropdown>
-    </Nav>
-  </Collapse>
-</Navbar>
+<nav class="... sticky top-0">
+  <Navbar color="light" light expand="md" class="sticky top-0">
+    <NavbarBrand href="/">
+      <!-- 커서 포인터 영역 활성화 -->
+        <span class="text-2xl font-[Poppins] cursor-pointer">
+          <!-- 인라인 처리! -->
+          <img class="h-8 inline" src="https://www.ggumin.me/images/logo-b.png" alt="">
+          꾸민
+        </span>
+    </NavbarBrand>
+    <NavbarToggler on:click={() => (isOpen = !isOpen)} />
+    <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
+      <Nav class="ms-auto" navbar>
+        <NavItem>
+          <NavLink class="text-right" href="#">소개</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink class="text-right" href="#">채용</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink class="text-right" href="#">로그인</NavLink>
+        </NavItem>
+      </Nav>
+    </Collapse>
+  </Navbar>
+</nav>
+
 
 <!--  여기다 -->
 <!-- <body class="bg-cyan-400">

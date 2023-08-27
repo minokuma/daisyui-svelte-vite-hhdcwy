@@ -293,7 +293,7 @@
   active={theme === 'light'}
   on:click={() => (theme = 'light')}
 >
-  light <Icon name="sun-fill" />
+  라이트 <Icon name="sun-fill" />
 </Button>
 <Button
   color="primary"
@@ -301,7 +301,7 @@
   active={theme === 'dark'}
   on:click={() => (theme = 'dark')}
 >
-  dark <Icon name="moon-stars-fill" />
+  다크 <Icon name="moon-stars-fill" />
 </Button>
 <Button
   color="primary"
@@ -309,7 +309,7 @@
   active={theme === 'auto'}
   on:click={() => (theme = 'auto')}
 >
-  auto <Icon name="circle-half" />
+  기본 <Icon name="circle-half" />
 </Button>
 
 <Navbar color="light" light expand="md">
@@ -325,10 +325,10 @@
   <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
     <Nav class="ms-auto" navbar>
       <NavItem>
-        <NavLink href="#components/">컴포넌트들</NavLink>
+        <NavLink class="text-right" href="#components/">컴포넌트들</NavLink>
       </NavItem>
       <NavItem>
-        <NavLink href="https://github.com/bestguy/sveltestrap"> 깃허브 </NavLink>
+        <NavLink class="text-right" href="https://github.com/bestguy/sveltestrap"> 깃허브 </NavLink>
       </NavItem>
       <Dropdown>
         <DropdownToggle nav caret>옵션들</DropdownToggle>

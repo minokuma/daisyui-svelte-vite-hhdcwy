@@ -32,8 +32,8 @@
   
   import AiOutlineMenu from "svelte-icons-pack/ai/AiOutlineMenu";
   import AiOutlineClose from "svelte-icons-pack/ai/AiOutlineClose";
-
   
+  import Divider from './reveal/Divider.svelte';
   // let isMenuOpen = false;
 
   // function toggleMenu() {
@@ -83,6 +83,7 @@
       text: "순식간에<br/>디자인하고 싶을 때<br/>꾸민!"
     },
   ];
+  
   let carousel; // for calling methods of the carousel instance
   const handleNextClick = () => {
     carousel.goToNext();
@@ -290,11 +291,15 @@
     box-sizing: border-box;
   }
   /* 줌 페이드 효과 종료 */
+
+  /* 커스텀 drop-shadow 스타일 클래스 정의 */
+  .text-drop-shadow {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* 원하는 drop-shadow 스타일을 설정 */
+  }
 </style>
 
 
 <Styles {theme} />
-
 
 <!-- <Button
   color="primary"
@@ -407,26 +412,7 @@
 
 <svelte:window bind:scrollY={y} bind:innerHeight={innerHeight}/>
 
-<div class="h-screen w-full flex flex-col">
-  <div class="">
-  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
-    <div class="drawer-content flex flex-col">
-      <!-- Navbar -->
-      <!-- <div class="w-full navbar bg-base-300 sticky top-0">
-        <div class="flex-1 px-2 mx-2">꾸민</div>
-        <div class="flex-none hidden lg:block">
-          <ul class="menu menu-horizontal">
-            <li><a>홈</a></li>
-            <li><a>로그인</a></li>
-          </ul>
-        </div>
-        <div class="flex-none lg:hidden ">
-          <label for="my-drawer-3" class="btn btn-square btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          </label>
-        </div> 
-      </div> -->
-      <Carousel
+<Carousel
         bind:this={carousel}
         let:loaded
         autoplay
@@ -437,7 +423,7 @@
         dots={false}
         particlesToShow={1}
       >
-         {#each images as src, imageIndex (src)}
+        {#each images as src, imageIndex (src)}
          <!-- 여기 class="container" -->
           <div class="carousel-text-container"> 
             {#if loaded.includes(imageIndex)}
@@ -447,18 +433,12 @@
                 class="img-container {theme === 'dark' ? 'opacity-50' : 'opacity-80'}"
               />
               <div class="{isMobile ? 'inset-0 flex justify-center text-3xl' : 'mx-20 text-5xl' } overlay-appbar-center ">
-              <p use:reveal={{ transition: "fade" }}>{@html src.text}</p>
+              <p class="text-black-1000 text-drop-shadow" use:reveal={{ transition: "fade" }}>{@html src.text}</p>
               </div>
             {/if}
           </div>
         {/each}
       </Carousel>
-      <!-- Page content here -->
-      <!-- <h1 use:reveal>Your title</h1> -->
-      
-    </div> 
-  </div>
-</div>
 
 <Example1 />
 

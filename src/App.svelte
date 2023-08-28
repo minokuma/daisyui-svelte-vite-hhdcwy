@@ -312,7 +312,6 @@
         <span class="text-2xl font-[Poppins] cursor-pointer">
           <!-- 인라인 처리! -->
           <img class="h-8 inline" src="https://www.ggumin.me/images/logo-b.png" alt="">
-          
         </span>    
     </NavbarBrand>
     
@@ -349,6 +348,7 @@
     </Collapse>
   </Navbar>
 </nav>
+
 
 <!--  여기다 -->
 <!-- <body class="bg-cyan-400">

@@ -1,6 +1,5 @@
 <script>
 
-
   import {
     Collapse,
     Navbar,
@@ -20,6 +19,11 @@
 	
   let theme = 'light';
   let isOpen = false;
+  let isNavbarOpaque = true;
+
+  function handleScroll() {
+    isNavbarOpaque = window.scrollY === 0; // 스크롤 위치에 따라 투명 여부 결정
+  }
 
   function handleUpdate(event) {
     isOpen = event.detail.isOpen;
@@ -166,7 +170,7 @@
 
 <style>
   a { display: block; }
-
+  
   .container {
     position: relative;
     /* width: 300px;
@@ -176,7 +180,6 @@
   .img-container {
     /* width: 100%;
     height: 100%; */
-    opacity: 0.4; /* 투명도  */
     width: 100%; /* 모바일 웹 및 데스크탑 웹을 위해 가로 사이즈 풀 */
     height: 700px; /* 모바일 웹 화면을 위해 높이 700px 로 고정 */
     background-position: -50px -30px; /* 원하는 부분의 위치 */
@@ -287,52 +290,61 @@
 <Styles {theme} />
 
 
-<Button
-  color="primary"
-  outline
-  active={theme === 'light'}
-  on:click={() => (theme = 'light')}
->
-  라이트 <Icon name="sun-fill" />
-</Button>
-<Button
-  color="primary"
-  outline
-  active={theme === 'dark'}
-  on:click={() => (theme = 'dark')}
->
-  다크 <Icon name="moon-stars-fill" />
-</Button>
-<Button
+<!-- <Button
   color="primary"
   outline
   active={theme === 'auto'}
   on:click={() => (theme = 'auto')}
 >
   기본 <Icon name="circle-half" />
-</Button>
+</Button> -->
 
-<nav class="... sticky top-0">
-  <Navbar color="light" light expand="md" class="sticky top-0">
+<nav class="sticky top-0 z-50">
+  <Navbar color={theme === 'dark'} light expand="md" class="{theme === 'dark' ? 'bg-black-800': 'bg-neutral-300 opacity-90'} ">
     <NavbarBrand href="/">
       <!-- 커서 포인터 영역 활성화 -->
         <span class="text-2xl font-[Poppins] cursor-pointer">
           <!-- 인라인 처리! -->
           <img class="h-8 inline" src="https://www.ggumin.me/images/logo-b.png" alt="">
-          꾸민
-        </span>
+          
+        </span>    
     </NavbarBrand>
-    <NavbarToggler on:click={() => (isOpen = !isOpen)} />
+
+    <!-- 버튼 -->
+    <Button
+      color="primary"
+      outline
+      active={theme === 'light'}
+      on:click={() => (theme = 'light')}
+    >
+      <Icon name="sun-fill" />
+    </Button>
+    <Button
+      color="primary"
+      outline
+      active={theme === 'dark'}
+      on:click={() => (theme = 'dark')}
+    >
+      <Icon name="moon-stars-fill" />
+    </Button>
+
+    <NavbarToggler  on:click={() => (isOpen = !isOpen)} />
     <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
       <Nav class="ms-auto" navbar>
         <NavItem>
-          <NavLink class="text-right" href="#">소개</NavLink>
+          <NavLink class="text-center"  href="#">
+            <span class="{theme === 'dark' ? 'text-gray-300': 'text-gray'}">소개</span> 
+          </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink class="text-right" href="#">채용</NavLink>
+          <NavLink class="text-center"  href="#">
+            <span class="{theme === 'dark' ? 'text-gray-300': 'text-gray'}">채용</span> 
+          </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink class="text-right" href="#">로그인</NavLink>
+          <NavLink class="text-center"  href="#">
+            <span class="{theme === 'dark' ? 'text-gray-300': 'text-gray'}">로그인</span> 
+          </NavLink>
         </NavItem>
       </Nav>
     </Collapse>
@@ -399,7 +411,6 @@
 
 <div class="h-screen w-full flex flex-col">
   <div class="">
-
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
     <div class="drawer-content flex flex-col">
       <!-- Navbar -->
@@ -417,7 +428,6 @@
           </label>
         </div> 
       </div> -->
-
       <Carousel
         bind:this={carousel}
         let:loaded
@@ -435,7 +445,7 @@
               <img 
                 src={src.url} 
                 alt={src.description} 
-                class=img-container
+                class="img-container {theme === 'dark' ? 'opacity-50' : 'opacity-80'}"
               />
               <div class="{isMobile ? 'inset-0 flex justify-center text-3xl' : 'mx-20 text-5xl' } overlay-appbar-center">
               <p use:reveal={{ transition: "fade" }}>{@html src.text}</p>
@@ -462,7 +472,7 @@
     <div 
       id="img-container"
       style:opacity="{calculate(y + 700, 0.7 * innerHeight, 1.8 * innerHeight, 0, 1)}"
-      >
+    >
     </div>
   </div>
 </div>

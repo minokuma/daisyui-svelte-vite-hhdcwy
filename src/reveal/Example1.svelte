@@ -78,22 +78,27 @@
   <div class="w-full md:w-[80%] md:flex md:justify-center">
     {#if isMobile}
       <div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-4">
-        <h3 use:reveal={{ transition: "blur", delay: 100 }} class="text-center text-white">(모바일)<br/>간편하고 안전하게<br/>파트너를 찾아요!
-      </div>
-			<div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-4">
-        <h3 use:reveal={{ transition: "blur", delay: 500 }} class="text-center text-white"></h3>
-      </div>
-			<div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-4">
-        <h3 use:reveal={{ transition: "blur", delay: 1000 }} class="text-center text-white"></h3>
+        <h3 use:reveal={{ transition: "blur", delay: 300 }} class="text-center text-white">간편하고 안전하게<br/>파트너를 찾아요!
       </div>
       <div use:reveal={{ x: -10, y: 150 }} class="md:w-full">
         <img class="max-w-full h-auto w-full" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEWpzF%2FbtqGfMB0vZl%2FkqkwUwBXr2XyCQjNICA4x1%2Fimg.png" />
       </div>
     {:else}
-			<div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-4 " >
-        <h1 use:reveal={{ transition: "blur", delay: 100 }} class="text-left text-white text-5xl font-fh font-bold">(데스크톱)<br/>간편하고 안전하게<br/>파트너를 찾아요!</h1>
-      </div>
-      <div use:reveal={{ x: -10, y: 150 }} class="md:max-w-[50%] md:mr-2">
+			<div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-4" >
+        <h1
+					use:reveal={{ transition: "blur", delay: 1000 }} 
+					class="text-left text-white text-5xl font-fh font-bold leading-relaxed">간편하고 안전하게<br/>파트너를 찾아요!
+				</h1>
+				<h3
+					use:reveal={{ transition: "blur", delay: 1500 }} 
+					class="text-left text-white text-5xl font-fh font-bold leading-normal">어떤 인테리어 디자인이든<br/>이제 꾸민에게<br/>걱정없이<br/>파트너를 찾으실 수 있어요~
+				</h3>
+    	</div>
+
+<!-- 'inset-0 flex justify-center text-3xl' : '' -->
+
+
+      <div use:reveal={{ x: -10, y: 150 }} class="md:max-w-[50%] md:mr-2 mx-20 flex">
         <img class="max-w-full h-auto w-full md:w-[100%]" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEWpzF%2FbtqGfMB0vZl%2FkqkwUwBXr2XyCQjNICA4x1%2Fimg.png" />
       </div>
     {/if}

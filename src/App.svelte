@@ -305,13 +305,13 @@
   기본 <Icon name="circle-half" />
 </Button> -->
 
-<nav class="sticky top-0 z-50">
+<nav class="sticky top-0 z-50 ">
   <Navbar color={theme === 'dark'} light expand="md" class="{theme === 'dark' ? 'backdrop-blur-sm bg-black/30 ' : 'backdrop-blur-sm bg-white/30 '} ">
     <NavbarBrand href="/">
       <!-- 커서 포인터 영역 활성화 -->
-        <span class="text-2xl font-[Poppins] cursor-pointer">
+        <span class="text-2xl font-[Poppins] cursor-pointer ">
           <!-- 인라인 처리! -->
-          <img class="h-8 inline" src="https://www.ggumin.me/images/logo-b.png" alt="">
+          <img class="h-8 inline" src="https://www.ggumin.me/images/logo-b.png" alt="" >
         </span>    
     </NavbarBrand>
     
@@ -446,7 +446,7 @@
                 alt={src.description} 
                 class="img-container {theme === 'dark' ? 'opacity-50' : 'opacity-80'}"
               />
-              <div class="{isMobile ? 'inset-0 flex justify-center text-3xl' : 'mx-20 text-5xl' } overlay-appbar-center">
+              <div class="{isMobile ? 'inset-0 flex justify-center text-3xl' : 'mx-20 text-5xl' } overlay-appbar-center ">
               <p use:reveal={{ transition: "fade" }}>{@html src.text}</p>
               </div>
             {/if}

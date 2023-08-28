@@ -1,4 +1,5 @@
 <script>
+  let isToggled = false;
 
   import {
     Collapse,
@@ -16,7 +17,7 @@
     Button, 
     Icon
   } from 'sveltestrap';
-	
+  
   let theme = 'light';
   let isOpen = false;
   let isNavbarOpaque = true;
@@ -91,39 +92,39 @@
 
   // 시차 효과 스크립트 시작
   import { Parallax, ParallaxLayer} from 'svelte-parallax'
-	
-	let parallax;
-	let disabled = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-	
-	const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
+  
+  let parallax;
+  let disabled = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  
+  const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
   // 시차 효과 스크립트 종료
 
   // 줌 페이드 효과 스크립트 시작
   let y = 0
-	let innerHeight
+  let innerHeight
 
-	function calculate(y, startY, endY, startValue, endValue) {
-		const diffY = endY - startY
-		const diffValue = endValue - startValue
+  function calculate(y, startY, endY, startValue, endValue) {
+    const diffY = endY - startY
+    const diffValue = endValue - startValue
 
-		if (y < startY) {
-			return startValue
-		} else if(startY <= y && y <= endY) {
-			const progress = (y - startY)/diffY
-			return startValue + (diffValue * progress)
-		} else if(endY < y){
-			return endValue
-		}
-	}
+    if (y < startY) {
+      return startValue
+    } else if(startY <= y && y <= endY) {
+      const progress = (y - startY)/diffY
+      return startValue + (diffValue * progress)
+    } else if(endY < y){
+      return endValue
+    }
+  }
 
-	import { fade } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
   // 줌 페이드 효과 스크립트 종료
 
-	import Sidebar from './Sidebar.svelte'
+  import Sidebar from './Sidebar.svelte'
   
-	import Main from './Main.svelte'
+  import Main from './Main.svelte'
 
-	let open = false
+  let open = false
   import { reveal } from 'svelte-reveal';
   import Example1 from './reveal/Example1.svelte';
 
@@ -169,12 +170,17 @@
 
 
 <style>
-  a { display: block; }
+  a { 
+    display: block; 
+  }
   
   .container {
     position: relative;
-    /* width: 300px;
-    height: 200px; */
+    /* height: 200px; */
+  }
+
+  .carousel-text-container {
+    position: relative;
   }
 
   .img-container {
@@ -182,7 +188,7 @@
     height: 100%; */
     width: 100%; /* 모바일 웹 및 데스크탑 웹을 위해 가로 사이즈 풀 */
     height: 700px; /* 모바일 웹 화면을 위해 높이 700px 로 고정 */
-    background-position: -50px -30px; /* 원하는 부분의 위치 */
+    /* background-position: -50px -30px;  */
     object-fit: cover; /* 이미지를 비율 유지하며 가득 채움 */
     transition: background-color 0.3s ease;
   }
@@ -222,67 +228,67 @@
 
   /* 시차 효과 스타일 */
   :global(body) {
-		padding: 0;
-	}
-	.server, .bash, .clients-main {
-		cursor: pointer;
-	}
-	img:focus {
-		outline: 1px dotted gray;
-	}
-	img:focus:not(:focus-visible) {
-		outline: none;
-	}
-	.server:focus-visible {
-		outline: 2px dotted gray;
-	}
-	.bash:focus-visible {
-		outline: 2px dotted purple;
-	}
-	.clients-main:focus-visible {
-		outline: 2px dotted blue;
-	}
+    padding: 0;
+  }
+  .server, .bash, .clients-main {
+    cursor: pointer;
+  }
+  img:focus {
+    outline: 1px dotted gray;
+  }
+  img:focus:not(:focus-visible) {
+    outline: none;
+  }
+  .server:focus-visible {
+    outline: 2px dotted gray;
+  }
+  .bash:focus-visible {
+    outline: 2px dotted purple;
+  }
+  .clients-main:focus-visible {
+    outline: 2px dotted blue;
+  }
 
   /* 줌 페이드 효과 시작 */
   #y-scroll {
-		position: fixed;
-		top: 1rem;
-		left: 1rem;
-		color: white;
-		z-index: 10;
-		font-size: 1.5rem;
-		font-weight: bold;
-	}
-	#content {
-		height: 500vh;
-	}
-	#home {
-		height: 260vh;
-		border-bottom: 5px solid #90aaa3;
-	}
-	#img-container {
-		position: sticky;
-		top: 0;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    color: white;
+    z-index: 10;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  #content {
+    height: 500vh;
+  }
+  #home {
+    height: 260vh;
+    border-bottom: 5px solid #90aaa3;
+  }
+  #img-container {
+    position: sticky;
+    top: 0;
     width: 100%; /* 모바일 웹 및 데스크탑 웹을 위해 가로 사이즈 풀 */
     height: 750px; /* 모바일 웹 화면을 위해 높이 700px 로 고정 */
-		/* width: 100%;
-		height: 100vh; */
-		background-image: url("https://selinerapp.tk/images/wallpaperbetter.com_2560x1440.jpg");
-		background-position: 50% 50%;
-		background-size: cover;
-		background-repeat: no-repeat;		
-	}
-	h1 {
-		color: white;
-		text-align: center;
-	}
-	:global(body) {
-		margin: 0;
-		background-color: black;
-	}
-	:global(*){
-		box-sizing: border-box;
-	}
+    /* width: 100%;
+    height: 100vh; */
+    background-image: url("https://selinerapp.tk/images/wallpaperbetter.com_2560x1440.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;   
+  }
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  :global(body) {
+    margin: 0;
+    background-color: black;
+  }
+  :global(*){
+    box-sizing: border-box;
+  }
   /* 줌 페이드 효과 종료 */
 </style>
 
@@ -300,7 +306,7 @@
 </Button> -->
 
 <nav class="sticky top-0 z-50">
-  <Navbar color={theme === 'dark'} light expand="md" class="{theme === 'dark' ? 'bg-black-800': 'bg-neutral-300 opacity-90'} ">
+  <Navbar color={theme === 'dark'} light expand="md" class="{theme === 'dark' ? 'backdrop-blur-sm bg-black/30 ' : 'backdrop-blur-sm bg-white/30 '} ">
     <NavbarBrand href="/">
       <!-- 커서 포인터 영역 활성화 -->
         <span class="text-2xl font-[Poppins] cursor-pointer">
@@ -309,26 +315,19 @@
           
         </span>    
     </NavbarBrand>
-
+    
     <!-- 버튼 -->
     <Button
-      color="primary"
       outline
       active={theme === 'light'}
-      on:click={() => (theme = 'light')}
+      on:click={() => (
+        theme = theme === 'light' ? 'dark' : 'light'
+      )}
     >
-      <Icon name="sun-fill" />
-    </Button>
-    <Button
-      color="primary"
-      outline
-      active={theme === 'dark'}
-      on:click={() => (theme = 'dark')}
-    >
-      <Icon name="moon-stars-fill" />
+      <Icon name={theme === 'light' ? "moon-stars-fill": "sun-fill" }  />
     </Button>
 
-    <NavbarToggler  on:click={() => (isOpen = !isOpen)} />
+    <NavbarToggler on:click={() => (isOpen = !isOpen)} />
     <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
       <Nav class="ms-auto" navbar>
         <NavItem>
@@ -350,7 +349,6 @@
     </Collapse>
   </Navbar>
 </nav>
-
 
 <!--  여기다 -->
 <!-- <body class="bg-cyan-400">
@@ -439,8 +437,9 @@
         dots={false}
         particlesToShow={1}
       >
-        {#each images as src, imageIndex (src)}
-          <div class="container">
+         {#each images as src, imageIndex (src)}
+         <!-- 여기 class="container" -->
+          <div class="carousel-text-container"> 
             {#if loaded.includes(imageIndex)}
               <img 
                 src={src.url} 
@@ -455,29 +454,13 @@
         {/each}
       </Carousel>
       <!-- Page content here -->
-      
       <!-- <h1 use:reveal>Your title</h1> -->
       
     </div> 
   </div>
 </div>
 
-<div id="">
-  <div id="">
-    <!-- <div id="img-container"
-      style:transform="scale({calculate(y, 0, 1*innerHeight, 1, 1.5)})"
-      style:opacity="{calculate(y, 0.7 * innerHeight, 1.8 * innerHeight, 1, 0)}"
-      >
-    </div> -->
-    <div 
-      id="img-container"
-      style:opacity="{calculate(y + 700, 0.7 * innerHeight, 1.8 * innerHeight, 0, 1)}"
-    >
-    </div>
-  </div>
-</div>
 <Example1 />
-
 
 <!-- 시차 효과 -->
 <Parallax 
@@ -695,4 +678,5 @@
       >
     </ParallaxLayer>
   </Parallax>
+
 

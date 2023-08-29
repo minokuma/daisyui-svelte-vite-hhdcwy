@@ -424,13 +424,17 @@
       >
         {#each images as src, imageIndex (src)}
          <!-- 여기 class="container" -->
-          <div class="carousel-text-container"> 
+          <div class="carousel-text-container " > 
             {#if loaded.includes(imageIndex)}
               <img 
                 src={src.url} 
                 alt={src.description} 
                 class="img-container {theme === 'dark' ? 'opacity-50' : 'opacity-80'}"
               />
+              <!-- <video width="100%" autoplay loop=true>
+                <source src="https://selinerapp.tk/images/simul.mp4" type="video/mp4" />
+              </video> -->
+              
               <div class="{isMobile ? 'inset-0 flex justify-center text-3xl' : 'mx-20 text-5xl' } overlay-appbar-center ">
               <p class="text-black-1000 text-drop-shadow" use:reveal={{ transition: "fade" }}>{@html src.text}</p>
               </div>
@@ -450,35 +454,37 @@
   <div class="absolute inset-x-0 top-0 p-4 text-center">
     <div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-4" >
       <h2
-        use:reveal={{ transition: "blur", delay: 1000 }} 
+        use:reveal={{ transition: "blur", delay: 100 }} 
         class="py-10 text-center text-white text-5xl font-fh font-bold leading-relaxed">꾸민이여야만 하는 이유!
       </h2>
-      <h3
-        use:reveal={{ transition: "blur", delay: 1500 }}
-        class="text-center text-white text-3xl font-fh font-bold leading-relaxed">비용, 시간, 공간이 부담없는 3D 디자인 앱 서비스로
-      </h3>
-      <h3
-        use:reveal={{ transition: "blur", delay: 2000 }}
-        class="text-center text-white text-3xl font-fh font-bold leading-relaxed">오직 인테리어 사장님들을 위해 혁신을 만들어 갑니다.
-      </h3>
+      <p
+        use:reveal={{ transition: "blur", delay: 300 }}
+        class="text-center text-gray-300 text-2xl font-fh font-bold leading-relaxed ">비용, 시간, 공간이 부담없는<br/>3D 디자인 앱 서비스로
+      </p>
       <br/>
+      <p
+        use:reveal={{ transition: "blur", delay: 500 }}
+        class="text-center text-gray-300 text-2xl font-fh font-bold leading-relaxed">오직 인테리어 고객님들을 위해<br/> 혁신을 만들어 갑니다.
+      </p>
+      <br/>
+      <p
+        use:reveal={{ transition: "blur", delay: 700 }} 
+        class="text-center text-gray-300 text-2xl font-fh font-bold leading-relaxed">지금까지 없던 새로운 경험으로
+      </p>
+      <p
+        use:reveal={{ transition: "blur", delay: 900 }} 
+        class="text-center text-gray-300 text-2xl font-fh font-bold leading-relaxed">고객의 만족도와 신뢰도를
+      </p>
+      <br/>
+      <h3
+        use:reveal={{ transition: "blur", delay: 1100 }} 
+        class="text-center text-gray-300 text-2xl font-fh font-bold leading-relaxed">고객님의 높은 기술성을
+      </h3>
+      <h3
+        use:reveal={{ transition: "blur", delay: 1300 }} 
+        class="text-center text-gray-300 text-2xl font-fh font-bold leading-relaxed">꾸민이 만들어 드립니다.
+      </h3>
     </div>
-      <h3
-        use:reveal={{ transition: "blur", delay: 2500 }} 
-        class="text-center text-white text-3xl font-fh font-bold leading-normal">지금까지 없던 새로운 경험으로
-      </h3>
-      <h3
-        use:reveal={{ transition: "blur", delay: 3000 }} 
-        class="text-center text-white text-3xl font-fh font-bold leading-normal">고객의 만족도와 신뢰도를
-      </h3>
-      <h3
-        use:reveal={{ transition: "blur", delay: 3500 }} 
-        class="text-center text-white text-3xl font-fh font-bold leading-normal">사장님의 높은 기술성을
-      </h3>
-      <h3
-        use:reveal={{ transition: "blur", delay: 4000 }} 
-        class="text-center text-white text-3xl font-fh font-bold leading-normal">꾸민이 만들어 드립니다.
-      </h3>
   </div>
 </div>
 

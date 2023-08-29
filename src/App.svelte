@@ -493,21 +493,24 @@
 <Example1 />
 
 <!-- 시차 효과 -->
-<Parallax 
+<!-- <Parallax 
   sections=3
   style="background-color: #253237;" {disabled} 
+  class="bg-gradient-to-r from-cyan-500 to-blue-500"
   bind:this={parallax}
->
-    <ParallaxLayer 
+> -->
+    <!-- <ParallaxLayer 
       offset=1 
       rate=1 
-      style="background-color: #87deb9;" 
+      class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
     />
+
     <ParallaxLayer 
       offset=2 
       rate=1 
-      style="background-color: #87BCDE;" 
+      class="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-80%"
     />
+
     <ParallaxLayer 
       offset=0 
       rate=0 
@@ -520,7 +523,7 @@
       rate=-0.3
     >
       <img 
-        src={url('satellite4')} 
+        src="https://static.toss.im/3d/tossbank-web-assest-02-apng.png"
         alt='' 
         style="width: 15%; margin-left: 70%;"
       >
@@ -541,6 +544,7 @@
         alt='' 
         style="display: block; width: 10%; margin-left: 15%;"
       >
+      
     </ParallaxLayer>
       
     <ParallaxLayer 
@@ -558,9 +562,9 @@
         alt='' 
         style="display: block; width: 20%; margin-left: 40%;"
       >
-    </ParallaxLayer>
+    </ParallaxLayer> -->
     
-    <ParallaxLayer 
+    <!-- <ParallaxLayer 
       offset=1 
       rate=0.2 
       style="opacity: 0.2;"
@@ -575,18 +579,18 @@
         alt='' 
         style="display: block; width: 20%; margin-left: 75%;"
       >
-    </ParallaxLayer>
+    </ParallaxLayer> -->
 
-    <ParallaxLayer 
+    <!-- <ParallaxLayer 
       offset=1.6
       rate=0.4
       style="opacity: 1.0;"
     >
     <center text-black>또 다른 세계<br/>나의 비슷한 조건의 사용자들의<br/>리얼한 후기들을 확인하고<br/>내게 딱 맞는 파트너와 함께 해요!</center>
 
-    </ParallaxLayer>
+    </ParallaxLayer> -->
      
-    <ParallaxLayer 
+    <!-- <ParallaxLayer 
       offset=1.3
       rate=-0.1 
       style="opacity: 0.4;"
@@ -606,9 +610,9 @@
         alt='' 
         style="display: block; width: 10%; margin-left: 80%;"
       >
-    </ParallaxLayer>
+    </ParallaxLayer> -->
     
-    <ParallaxLayer 
+    <!-- <ParallaxLayer 
       offset=2.6 
       rate=0.4 
       style="opacity: 0.6;"
@@ -623,9 +627,9 @@
         alt='' 
         style="display: block; width: 15%; margin-left: 75%;"
       >
-    </ParallaxLayer>
+    </ParallaxLayer> -->
     
-    <ParallaxLayer 
+    <!-- <ParallaxLayer 
       offset=2.5 
       rate=-0.4 
       style="display: flex; align-items: center; justify-content: center;"
@@ -635,9 +639,9 @@
         alt='' 
         style="width: 60%;"
       >
-    </ParallaxLayer>
+    </ParallaxLayer> -->
 
-    <ParallaxLayer 
+    <!-- <ParallaxLayer 
       offset=2
       rate=-0.3
       style="display: flex; align-items: center; justify-content: center;"
@@ -647,9 +651,9 @@
         alt='' 
         style="height: 80%; width: 80%;"
       >
-  </ParallaxLayer>
+  </ParallaxLayer> -->
 
-    <ParallaxLayer 
+    <!-- <ParallaxLayer 
       offset=0 
       rate=0.1
       style="display: flex; align-items: center; justify-content: center;"
@@ -663,8 +667,9 @@
         on:keyup={(e) => e.key === 'Enter' && parallax.scrollTo(2, {selector: '.bash'})}
         tabindex=0
       >
-    </ParallaxLayer>
-    <ParallaxLayer 
+    </ParallaxLayer> -->
+
+    <!-- <ParallaxLayer 
       offset=1
       rate=0.1
       style="display: flex; align-items: center; justify-content: center;"
@@ -678,13 +683,14 @@
         on:keyup={(e) => e.key === 'Enter' && parallax.scrollTo(3, {selector: '.clients-main'})} 
         tabindex=0
       >
-    </ParallaxLayer>
+    </ParallaxLayer> -->
     
-    <ParallaxLayer 
+    <!-- <ParallaxLayer 
       offset=2
       rate=-0
       style="display: flex; align-items: center; justify-content: center;"
     >
+     
       <img 
         src={url('clients-main')} 
         alt='' 
@@ -706,7 +712,7 @@
         }
         tabindex=0
       >
-    </ParallaxLayer>
-  </Parallax>
+    </ParallaxLayer> -->
+  <!-- </Parallax> -->
 
 

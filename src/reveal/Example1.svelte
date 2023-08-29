@@ -74,7 +74,28 @@
 </div> -->
 
 
-<div class="box h-screen w-screen w-full bg-blue-700 flex flex-col justify-center flex items-center">
+
+
+
+
+<!-- 카드 -->
+<div class="h-screen w-screen w-full bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex flex-col justify-center items-center">
+	<div class="card w-96 glass">
+		<figure><img src="http://thescienceplus.com/news/data/20200810/p1065585306800416_891_thum.png" alt="car!"/></figure>
+		<div class="card-body">
+			<h2 class="card-title">고객관리</h2>
+			<p>연락처부터 공사정보까지 꼼꼼하게~</p>
+			<div class="card-actions justify-end">
+				<button class="btn btn-primary">Learn now!</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="box h-screen w-screen w-full bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex flex-col justify-center items-center">
   <div class="w-full md:w-[80%] md:flex md:justify-center">
     {#if isMobile}
       <div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-4">
@@ -83,6 +104,7 @@
       <div use:reveal={{ x: -10, y: 150 }} class="md:w-full">
         <img class="max-w-full h-auto w-full" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEWpzF%2FbtqGfMB0vZl%2FkqkwUwBXr2XyCQjNICA4x1%2Fimg.png" />
       </div>
+			
     {:else}
 			<div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-4" >
         <h1
@@ -104,6 +126,23 @@
     {/if}
   </div>
 </div>
+
+<!-- 카드 -->
+<div class="h-screen w-screen w-full bg-gradient-to-r from-emerald-400 from-10% via-sky-300 via-30% to-emerald-500 to-90% flex flex-col justify-center items-center">
+	<div class="card w-96 glass">
+		<figure><img src="http://thescienceplus.com/news/data/20200810/p1065585306800416_891_thum.png" alt="car!"/></figure>
+		<div class="card-body">
+			<h3 class="card-title">고객관리</h3>
+			<p>How to park your car at your garage?</p>
+			<div class="card-actions justify-end">
+				<button class="btn btn-primary">Learn now!</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 
 <!-- 
 <div class="box h-screen w-full  bg-blue-700 flex flex-col justify-center flex items-center ">

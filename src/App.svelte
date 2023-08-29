@@ -169,7 +169,6 @@
   
 </script>
 
-
 <style>
   a { 
     display: block; 
@@ -435,10 +434,55 @@
               <div class="{isMobile ? 'inset-0 flex justify-center text-3xl' : 'mx-20 text-5xl' } overlay-appbar-center ">
               <p class="text-black-1000 text-drop-shadow" use:reveal={{ transition: "fade" }}>{@html src.text}</p>
               </div>
+                <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             {/if}
           </div>
         {/each}
       </Carousel>
+
+
+
+<div class="h-screen w-screen w-full relative">
+  <!-- 그라데이션 glass 효과 -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black to-black"></div>
+  
+  <!-- 텍스트 -->
+  <div class="absolute inset-x-0 top-0 p-4 text-center">
+    <div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-4" >
+      <h2
+        use:reveal={{ transition: "blur", delay: 1000 }} 
+        class="py-10 text-center text-white text-5xl font-fh font-bold leading-relaxed">꾸민이여야만 하는 이유!
+      </h2>
+      <h3
+        use:reveal={{ transition: "blur", delay: 1500 }}
+        class="text-center text-white text-3xl font-fh font-bold leading-relaxed">비용, 시간, 공간이 부담없는 3D 디자인 앱 서비스로
+      </h3>
+      <h3
+        use:reveal={{ transition: "blur", delay: 2000 }}
+        class="text-center text-white text-3xl font-fh font-bold leading-relaxed">오직 인테리어 사장님들을 위해 혁신을 만들어 갑니다.
+      </h3>
+      <br/>
+    </div>
+      <h3
+        use:reveal={{ transition: "blur", delay: 2500 }} 
+        class="text-center text-white text-3xl font-fh font-bold leading-normal">지금까지 없던 새로운 경험으로
+      </h3>
+      <h3
+        use:reveal={{ transition: "blur", delay: 3000 }} 
+        class="text-center text-white text-3xl font-fh font-bold leading-normal">고객의 만족도와 신뢰도를
+      </h3>
+      <h3
+        use:reveal={{ transition: "blur", delay: 3500 }} 
+        class="text-center text-white text-3xl font-fh font-bold leading-normal">사장님의 높은 기술성을
+      </h3>
+      <h3
+        use:reveal={{ transition: "blur", delay: 4000 }} 
+        class="text-center text-white text-3xl font-fh font-bold leading-normal">꾸민이 만들어 드립니다.
+      </h3>
+  </div>
+</div>
+
+
 
 <Example1 />
 

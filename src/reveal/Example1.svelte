@@ -640,20 +640,6 @@
 </div>
 
 
-<!-- 카드 -->
-<div class="h-screen w-screen w-full bg-gradient-to-r from-emerald-400 from-10% via-sky-300 via-30% to-emerald-500 to-90% flex flex-col justify-center items-center">
-	<div class="card w-96 glass">
-		<figure><img src="http://thescienceplus.com/news/data/20200810/p1065585306800416_891_thum.png" alt="car!"/></figure>
-		<div class="card-body">
-			<h3 class="card-title">고객관리</h3>
-			<p>How to park your car at your garage?</p>
-			<div class="card-actions justify-end">
-				<button class="btn btn-primary">Learn now!</button>
-			</div>
-		</div>
-	</div>
-</div>
-
 
 
 

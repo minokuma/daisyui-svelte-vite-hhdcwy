@@ -493,6 +493,206 @@
 <Example1 />
 
 
+
+
+
+
+<!-- This is an example component -->
+<div class='flex items-center justify-center min-h-screen from-[#F9F5F3] via-[#F9F5F3] to-[#F9F5F3] bg-gradient-to-br px-2'>
+    <div class='w-full max-w-md  mx-auto bg-white rounded-3xl shadow-xl overflow-hidden'>
+        <div class='max-w-md mx-auto'>
+          <div class='h-[236px]' style='background-image:url(https://img.freepik.com/free-photo/pasta-spaghetti-with-shrimps-sauce_1220-5072.jpg?w=2000&t=st=1678041911~exp=1678042511~hmac=e4aa55e70f8c231d4d23832a611004f86eeb3b6ca067b3fa0c374ac78fe7aba6);background-size:cover;background-position:center'>
+           </div>
+          <div class='p-4 sm:p-6'>
+            <p class='font-bold text-gray-700 text-[22px] leading-7 mb-1'>Spagetti with shrimp sauce</p>
+            <div class='flex flex-row'>
+              <p class='text-[#3C3C4399] text-[17px] mr-2 line-through'>MVR 700</p>
+              <p class='text-[17px] font-bold text-[#0FB478]'>MVR 700</p>
+            </div>
+            <p class='text-[#7C7C80] font-[15px] mt-6'>Our shrimp sauce is made with mozarella, a creamy taste of shrimp with extra kick of spices.</p>
+
+
+              <a target='_blank' href='foodiesapp://food/1001' class='block mt-10 w-full px-4 py-3 font-medium tracking-wide text-center capitalize transition-colors duration-300 transform bg-[#FFC933] rounded-[14px] hover:bg-[#FFC933DD] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80'>
+                  View on foodies
+              </a>
+            <a target='_blank' href="https://apps.apple.com/us/app/id1493631471" class='block mt-1.5 w-full px-4 py-3 font-medium tracking-wide text-center capitalize transition-colors duration-300 transform rounded-[14px] hover:bg-[#F2ECE7] hover:text-[#000000dd] focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80'>
+                  Download app
+              </a>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
+    <div class="w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
+    <div class="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+    <div class="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+    <div class="h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+    <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
+        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-2-light.png" class="dark:hidden w-[272px] h-[572px]" alt="">
+        <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-2-dark.png" class="hidden dark:block w-[272px] h-[572px]" alt="">
+    </div>
+</div>
+
+
+
+
+<div class="relative">
+  <div class="sticky top-0 flex h-screen items-center justify-center">
+    <img src="https://www.stockvault.net/data/2012/10/29/137060/preview16.jpg" class="h-full w-full object-cover" />
+    <div class="absolute left-0 right-0 m-auto flex w-2/4 flex-col items-start justify-center gap-4 p-10 backdrop-blur-xl">
+      <h2 class="text-2xl font-bold">First Section</h2>
+      <p class="font-sans text-lg text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+    </div>
+  </div>
+  <div class="sticky top-0 flex h-screen items-center justify-center">
+    <img src="https://www.stockvault.net/data/2014/10/06/163147/preview16.jpg" class="h-full w-full object-cover" />
+
+    <div class="absolute left-0 right-0 m-auto flex w-2/4 flex-col items-start justify-center gap-4 p-10 backdrop-blur-xl">
+      <h2 class="text-2xl font-bold text-white">Second Section</h2>
+      <p class="font-sans text-lg text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+    </div>
+  </div>
+
+  <div class="sticky top-0 flex h-screen items-center justify-center">
+    <img src="https://www.stockvault.net/data/2016/03/14/187739/preview16.jpg" class="h-full w-full object-cover" />
+
+    <div class="absolute left-0 right-0 m-auto flex w-2/4 flex-col items-start justify-center gap-4 p-10 backdrop-blur-xl">
+      <h2 class="text-2xl font-bold text-white">Third Section</h2>
+      <p class="font-sans text-lg text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+    </div>
+  </div>
+
+  <div class="sticky top-0 flex h-screen items-center justify-center">
+    <img src="https://www.stockvault.net/data/2016/03/14/187732/preview16.jpg" class="h-full w-full object-cover" />
+
+    <div class="absolute left-0 right-0 m-auto flex w-2/4 flex-col items-start justify-center gap-4 p-10 backdrop-blur-xl">
+      <h2 class="text-2xl font-bold text-white">Fourth Section</h2>
+      <p class="font-sans text-lg text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="flex flex-col gap-10 p-10">
+
+  <div class="group relative flex h-[220px] max-w-3xl cursor-pointer items-start gap-2 overflow-hidden rounded-lg shadow-sm transition-all duration-300 hover:shadow-2xl">
+    <img src="https://p1.pxfuel.com/preview/778/373/101/nature-landscape-rocks-formation-cave-beauty.jpg" class="h-full w-[300px] object-cover transition-all duration-300 group-hover:opacity-90" />
+    <div class="flex flex-col items-start justify-center gap-4 p-4">
+      <h2 class="text-2xl font-semibold">Card Title</h2>
+      <p class="text-base">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+      <button class="rounded-md bg-blue-600 px-5 py-2 text-white shadow-xl transition-all duration-300 hover:bg-blue-700">Button</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12" style="background-image: url('https://picsum.photos/id/1018/1000')">
+  <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+    <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20 bg-clip-padding bg-opacity-60 border border-gray-200" style="backdrop-filter: blur(20px);">
+      <div class="max-w-md mx-auto">
+        <div>
+          <img src="https://cdn.worldvectorlogo.com/logos/tailwind-css-1.svg" class="h-16 sm:h-24" />
+        </div>
+        <div class="divide-y divide-gray-200">
+          <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+            <p>Tailwind CSS update bring a new powerful features.</p>
+            <ul class="list-disc space-y-2">
+              <li class="flex items-start">
+                <span class="h-6 flex items-center sm:h-7">
+                  <svg class="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <p class="ml-2">
+                  Customizing style and create design system
+                </p>
+              </li>
+              <li class="flex items-start">
+                <span class="h-6 flex items-center sm:h-7">
+                  <svg class="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <p class="ml-2">
+                  Just-In-Time : The Next Generation of Tailwind CSS
+                </p>
+              </li>
+              <li class="flex items-start">
+                <span class="h-6 flex items-center sm:h-7">
+                  <svg class="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <p class="ml-2">Tailwind CSS from Zero to Production</p>
+              </li>
+            </ul>
+            <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
+          </div>
+          <div class="pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">
+            <p>See me on <a class="font-bold text-blue-700" href="https://www.linkedin.com/in/ferdianar/"> LinkedIn </a></p>
+            <p>
+              <a href="https://tailwindcss.com/docs" class="text-cyan-600 hover:text-cyan-700"> Read the docs &rarr; </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="h-screen flex items-center justify-center">
+
+  <card class="relative h-[30rem] sm:h-96 w-[35rem] rounded-lg">
+
+    <!-- Background Image -->
+    <img src="https://picsum.photos/seed/1840/1000/600" class="object-cover w-full h-full rounded-lg" />
+    
+    <!-- Content -->
+    <div class="absolute w-full h-full bottom-0 bg-gradient-to-r from-fuchsia-700/30 to-violet-700 rounded-lg flex flex-col items-center justify-center text-center">
+    
+        <!-- Company Logo -->
+        <img src="https://github.githubassets.com/images/modules/site/enterprise/launchpad/logos/logo-dowjones.svg" />
+
+        <!-- Quotes -->
+        <p class="text-lg px-14 text-gray-300 mt-10">
+          GitHub helps us ensure that we have our security controls baked into our pipelines all the way from the first line of code we’re writing.
+        </p>
+
+        <!-- Photo -->
+        <img src="https://picsum.photos/50/50" class="rounded-full border-2 mt-8" />
+
+        <!-- Title -->
+        <p class="text-base font-bold px-14 text-gray-300 mt-3">
+          Chief Information Security Officer
+        </p>
+
+        <p class="text-sm font-light px-14 text-gray-300 ">
+          존슨
+        </p>
+
+    </div>
+
+  </card>
+
+</div>
+
+
+
+
 <footer class="p-10 footer bg-base-200 text-base-content footer-center">
   <div class="grid grid-flow-col gap-4">
     <a class="link link-hover">소개</a> 

@@ -232,7 +232,10 @@
         </div>
         <!-- 데스크탑 디바이스 스크린 종료 -->
       </div>
-			<div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-1 px-20">
+			<div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-1 px-20 relative">
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob "></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
         <h1
 					use:reveal={{ transition: "blur", delay: 100 }} 
 					class="text-left text-black text-5xl font-fh font-bold leading-relaxed">3D 시뮬레이션
@@ -274,7 +277,7 @@
     </div>
 			
     {:else}
-			<div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-4" >
+			<div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-4">
         <h1
 					use:reveal={{ transition: "blur", delay: 100 }} 
 					class="text-left text-white text-5xl font-fh font-bold leading-relaxed">고객관리
@@ -561,7 +564,10 @@
         </div>
         <!-- 데스크탑 디바이스 스크린 종료 -->
       </div>
-			<div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-1 px-20">
+			<div use:reveal={{ x: -50, y: 10 }} class="md:w-full mb-1 px-20 relative">
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob "></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
         <h1
 					use:reveal={{ transition: "blur", delay: 100 }} 
 					class="text-left text-black text-5xl font-fh font-bold leading-relaxed">모바일 견적서
@@ -579,6 +585,7 @@
 					class="text-left text-gray-500 text-5xl font-fh font-bold leading-normal">공유하세요.
 				</h3>
     	</div>
+      
     {/if}
   </div>
 </div>
@@ -603,7 +610,7 @@
 				class="text-xl text-center text-gray-200 text-5xl font-fh font-bold leading-normal mt-1">쉽게 공유할 수 있어요.
 			</p>
       <div use:reveal={{ x: -10, y: 150 }} class="md:w-full transform rotate-90 transform-origin-center">
-        <img class="max-w-full h-auto max-w-[70%]" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEWpzF%2FbtqGfMB0vZl%2FkqkwUwBXr2XyCQjNICA4x1%2Fimg.png"  />
+        <img class="max-w-full h-auto max-w-[65%]" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEWpzF%2FbtqGfMB0vZl%2FkqkwUwBXr2XyCQjNICA4x1%2Fimg.png"  />
       </div>
 			
     {:else}

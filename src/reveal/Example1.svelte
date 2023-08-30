@@ -393,7 +393,7 @@
 					class="text-left text-white text-5xl font-fh font-bold leading-relaxed">쉽게 공유할 수 있어요.
 				</h3>
     	</div>
-      <div use:reveal={{ x: -10, y: 150 }} class="md:max-w-[50%] md:mr-2 mx-20 flex transform rotate-90 transform-origin-center">
+      <div use:reveal={{ x: -10, y: 150 }} class="md:max-w-[50%] md:mr-2 mx-20 flex transform -rotate-90 transform-origin-center">
         <img class="max-w-full h-auto max-w-[100%] md:w-[100%]" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEWpzF%2FbtqGfMB0vZl%2FkqkwUwBXr2XyCQjNICA4x1%2Fimg.png" />
       </div>
     {/if}

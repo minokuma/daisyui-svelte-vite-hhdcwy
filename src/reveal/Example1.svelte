@@ -152,7 +152,7 @@
                           </div>
                           <p class="text-sm">나만의 분위기있는 꾸민 모던스타일~</p>
                           <div class="mt-4 mb-10">
-                            <button class="btn btn btn-primary btn-sm mt-4">친구등록</button>
+                            <button class="btn btn btn-secondary btn-sm mt-4">친구등록</button>
                           </div>
                           <div class="w-full tabs">
                             <a class="flex-grow tab tab-lifted"></a>
@@ -333,7 +333,7 @@
                           </div>
                           <p class="text-sm">나만의 분위기있는 꾸민 모던스타일~</p>
                           <div class="mt-4 mb-10">
-                            <button class="btn btn btn-primary btn-sm mt-4">친구등록</button>
+                            <button class="btn btn btn-secondary btn-sm mt-4">친구등록</button>
                           </div>
                           <div class="w-full tabs">
                             <a class="flex-grow tab tab-lifted"></a>
@@ -481,7 +481,7 @@
                           </div>
                           <p class="text-sm">나만의 분위기있는 꾸민 모던스타일~</p>
                           <div class="mt-4 mb-10">
-                            <button class="btn btn btn-primary btn-sm mt-4">친구등록</button>
+                            <button class="btn btn btn-secondary btn-sm mt-4">친구등록</button>
                           </div>
                           <div class="w-full tabs">
                             <a class="flex-grow tab tab-lifted"></a>
